@@ -46,7 +46,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             <div className='images'>
                 <div className='frontend'>
                     <ReactCardFlip isFlipped={isFlipped} flipDirection='horizontal' >
-                    <img  className={'sunflower'} src='../static/sunflower.jpg' alt='Sunflower Image' key={frontend ? null : 'front'} onClick={clickMe} />
+                    <img  className={'sunflower'} src='../static/treeTopFinall.png' alt='Sunflower Image' key={frontend ? null : 'front'} onClick={clickMe} />
                     <div className={'view'} onClick={clickMe} key='back'>
                     <div className='card-back'>
                         <h3 className="skills-title">Front End</h3>
@@ -91,7 +91,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
                 <div className='backend' onClick={() => setBackend(!backend)}>
                     <ReactCardFlip isFlipped={isFlipped2} flipDirection='horizontal' >
-                        <img className='roots' src='../static/roots.jpg' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
+                        <img className='roots' src='../static/treeRootsFinal.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
                         <div className={'view'} onClick={clickMeBack} key='back'>
                         <div className='card-back'>
                             <h3 className='skills-title'>Back End</h3>
@@ -317,8 +317,11 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 }
                 .images {
                     display: flex;
-                    justify-content: space-around;
-                    padding: 2%;
+                    flex-direction: column;
+                    align-items: center;
+
+                    // justify-content: space-around;
+                    // padding: 2%;
                 }
 
                 .sunflower, .roots {
@@ -350,7 +353,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 }
                 .frontend, .backend {
                     width: 35%;
-                    margin-top: 2%;
+                    // margin-top: 2%;
                     // border: 1px solid red;
                     display: flex;
                     flex-direction: column;
