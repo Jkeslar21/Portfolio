@@ -467,6 +467,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 .title-skills {
                     margin-top: 1%;
                 }
+                .section-content {
+                    margin-bottom: 2%;
+                }
       `}</style>
     </>
     )

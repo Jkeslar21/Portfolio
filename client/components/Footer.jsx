@@ -121,9 +121,9 @@ export default function Footer() {
         <style jsx>{`
         .particles {
             width: 100%;
-            // height: 25vh;
             margin-top: -13%;
             background-color: #e5e7e6;
+            z-index: -3;
         }
       `}</style>
         </>

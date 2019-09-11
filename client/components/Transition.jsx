@@ -27,7 +27,6 @@ export default function Transition({image, dark, home}) {
                     color: #e5e7e6;
                     margin-top: -8%;
                     font-size: 4rem;
-                    z-index: 50;
                 }
                 .arrow-up-icon {
                     display: flex;
@@ -35,7 +34,7 @@ export default function Transition({image, dark, home}) {
                     color: #000c1f;
                     margin-top: -8%;
                     font-size: 4rem;
-                    z-index: 50;
+            
                 }
                 // .light-arrow {
                 //     color: #e5e7e6;
