@@ -34,7 +34,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             {/* <div className={"section" + (dark ? " section-dark" : "")}> */}
         <div className="section-content" id={id}>
             <ScrollAnimation animateIn='fadeIn' duration={2}>
-                <h2><span className={dark ? 'span-dark' : 'span'}>{title}</span></h2>
+    
+                <h2 className='title-center'><span className={dark ? 'span-dark' : 'span'}>{title}</span></h2>
+
             {/* </ScrollAnimation> */}
 
                        {/* Dynamic Sections */}
@@ -321,7 +323,8 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     align-items: center;
 
                     // justify-content: space-around;
-                    // padding: 2%;
+                    padding: 1%;
+                    padding-top: 2%;
                 }
 
                 .sunflower, .roots {
@@ -428,17 +431,20 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     line-height: 1.8;
                     padding-top: 2%;
                 }
+                .title-center {
+                    display: flex;
+                    justify-content: center;
+                }
                 .span {
                     // border-bottom: 2px solid #b80c09;
                     color: #000c1f;
-                    // align-self: center;
+                    // align-items: center;
+                    margin-right: 2%;
                 }
                 .span-dark {
                     // border-bottom: 1px solid #4ad5ff;
                     // color: #000c1f;
-                }
-                .light-text {
-                    color: #141301;
+                    margin-right: 2%;
                 }
                 .arrow-up-icon-dark {
                     color: #e5e7e6;
@@ -447,7 +453,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     font-size: 2.5rem;
                 }
                 .arrow-up-icon {
-                    color: #141301;
+                    color: #000c1f;
                     margin-left: 49%;
                     margin-top: 10%;
                     font-size: 2.5rem;
@@ -509,7 +515,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     width: 100%;
                     justify-content: space-around;
                     align-items: center;
-                    margin: 10% 0;
+                    margin: 5% 0;
                 }
                 .gauge-styles {
                     display: flex;
@@ -530,7 +536,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 .dynamic {
                     margin-top: 55px;
                 }
-                
+                .light-text {
+                    color: #000c1f;
+                }
       `}</style>
     </>
     )
