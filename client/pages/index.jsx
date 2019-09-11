@@ -4,6 +4,7 @@ import Section from '../components/Section'
 import Home from '../components/Home'
 import GlobalStyles from '../components/GlobalStyles'
 import GlobalHead from '../components/GlobalHead'
+import Footer from '../components/Footer'
 // import ScrollAnimation from 'react-animate-on-scroll';
 
 
@@ -49,7 +50,7 @@ export default function index() {
                 dark
                 contact
                 />
-            
+            <Footer />
         </div>
     )
 }

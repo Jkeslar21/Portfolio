@@ -121,6 +121,7 @@ export default function Home() {
         <>
             <div className='wrapper'>
                 <Particles params={particleOpt} />
+                </div>
                 <div className={'home'}>
                 <ScrollAnimation animateIn='fadeIn' duration={2}>
                     <h1>Joshua Keslar</h1>
@@ -139,12 +140,16 @@ export default function Home() {
              ><h5 className={'arrow-down'} ><TiArrowDownThick /></h5></Link>
                     </ScrollAnimation>
                 </div>
-                <Transition image={'../static/darkToLight.png'} home />
-            </div>
-            
-           
-           
+                <div className='particle-bottom'>
+                  <Particles params={particleOpt} />
+                  <div className='clear'>
+                  <Transition image={'../static/clearToLight.png'} home />
+                  </div>
+                </div>               
             <style jsx>{`
+        .particle-bottom {
+          background-color: #000c1f;
+        }
         .home {
             background-color: #000c1f;
             height: 100vh;
@@ -187,13 +192,9 @@ export default function Home() {
             margin-top: 200px;
             font-size: 4rem;
         }
-        
-        .test {
-            -webkit-box-shadow: 0px 0px 32px 21px rgba(255,255,255,1);
--moz-box-shadow: 0px 0px 32px 21px rgba(255,255,255,1);
-box-shadow: 0px 0px 32px 21px rgba(255,255,255,1);
-border-radius: 21px;
-            margin-top: 9%;
+        .clear {
+          z-index: 50;
+          margin-top: -50%;
         }
       `}</style>
         </>
