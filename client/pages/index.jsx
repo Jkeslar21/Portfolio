@@ -20,7 +20,7 @@ export default function index() {
             <Section 
                 title='Skills'
                 id='skills'
-                image={'../static/lightToDarkBlue.png'}
+                image={'../static/lightToDark.png'}
                 classNameProp='light'
                 dark={false}
                 skills
@@ -28,7 +28,7 @@ export default function index() {
             <Section 
                 title='Portfolio'
                 id='portfolio'
-                image={'../static/darkBlueToLight.png'}
+                image={'../static/darkToLight.png'}
                 classNameProp='dark'
                 dark
                 portfolio
@@ -36,7 +36,7 @@ export default function index() {
             <Section 
                 title='Resume'
                 id='resume'
-                image={'../static/lightToDarkBlue.png'}
+                image={'../static/lightToDark.png'}
                 classNameProp='light'
                 dark={false}
                 resume
@@ -44,7 +44,7 @@ export default function index() {
             <Section 
                 title='Contact'
                 id='contact'
-                image={'../static/darkBlueToLight.png'}
+                image={'../static/darkToLight.png'}
                 classNameProp='dark'
                 dark
                 contact

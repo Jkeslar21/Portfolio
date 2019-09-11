@@ -3,6 +3,7 @@ import Transition from '../components/Transition'
 import ScrollAnimation from 'react-animate-on-scroll';
 import Particles from 'react-particles-js'
 import { TiArrowDownThick } from "react-icons/ti";
+import { Link } from 'react-scroll'
 
 const particleOpt = {
     "particles": {
@@ -128,10 +129,17 @@ export default function Home() {
                     <h4>Software Developer</h4>
                     </ScrollAnimation>
                     <ScrollAnimation animateIn='fadeIn' duration={2}>
-                    <h5 className={'arrow-down'} ><TiArrowDownThick /></h5>
+                    <Link 
+                activeClass='active'
+                to="skills"
+                spy={true}
+                smooth={true}
+                duration={1000}
+                offset={-125}
+             ><h5 className={'arrow-down'} ><TiArrowDownThick /></h5></Link>
                     </ScrollAnimation>
                 </div>
-                <Transition image={'../static/darkBlueToLight.png'} />
+                <Transition image={'../static/darkToLight.png'} home />
             </div>
             
            
@@ -171,9 +179,13 @@ export default function Home() {
         }
         .arrow-down {
             color: #e5e7e6;
-            margin-left: 49%;
-            margin-top: 10%;
-            font-size: 2.5rem;
+            // color: #4ad5ff;
+            // color: silver;
+            display: flex;
+            justify-content: center;
+            // color: white;
+            margin-top: 200px;
+            font-size: 4rem;
         }
         
         .test {
