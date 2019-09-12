@@ -36,6 +36,9 @@ export default function Transition({image, dark, home, contact}) {
                     font-size: 4rem;
                     // z-index: 9999;
                 }
+                .arrow-up-icon-dark:hover {
+                    cursor: pointer;
+                }
                 .arrow-up-icon {
                     display: flex;
                     justify-content: center;
@@ -43,6 +46,9 @@ export default function Transition({image, dark, home, contact}) {
                     margin-top: -8%;
                     font-size: 4rem;
                     // z-index: 9999;
+                }
+                .arrow-up-icon:hover {
+                    cursor: pointer;
                 }
                 
                 // .light-arrow {

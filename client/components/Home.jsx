@@ -181,7 +181,6 @@ export default function Home() {
             -webkit-user-select: none; /* Webkit */
             -moz-user-select: none;    /* Firefox */
             -ms-user-select: none;     /* IE 10  */
-            /* Currently not supported in Opera but will be soon */
             -o-user-select: none;
             user-select: none;   
         }
@@ -194,7 +193,6 @@ export default function Home() {
             -webkit-user-select: none; /* Webkit */
                     -moz-user-select: none;    /* Firefox */
                     -ms-user-select: none;     /* IE 10  */
-                    /* Currently not supported in Opera but will be soon */
                     -o-user-select: none;
                     user-select: none;   
         }

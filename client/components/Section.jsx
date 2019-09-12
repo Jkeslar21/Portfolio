@@ -407,7 +407,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     font-size: 4rem ;
                     position: relative;
                     top: 300px;
-                    // z-index: 99;
+                }
+                .arrow-up-icon-dark:hover {
+                    cursor: pointer;
                 }
                 // .arrow-up-icon {
                 //     color: #000c1f;
