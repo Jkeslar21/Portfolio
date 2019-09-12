@@ -46,11 +46,11 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             <div className='images'>
                 <div className='frontend'>
                     <ReactCardFlip isFlipped={isFlipped} flipDirection='horizontal' >
-                    <img  className={'sunflower'} src='../static/treeTopFinall.png' alt='Sunflower Image' key={frontend ? null : 'front'} onClick={clickMe} />
+                    <img  className={'sunflower'} src='../static/treeTopFinally.png' alt='Sunflower Image' key={frontend ? null : 'front'} onClick={clickMe} />
                     <div className={'view'} onClick={clickMe} key='back'>
                     <div className='card-back'>
                         <h3 className="skills-title">Front End</h3>
-                            <div className='card-icons'>
+                            <div className='card-icons back'>
                                 {/* Git */}
                                 <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} />
                                 
@@ -91,11 +91,11 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
                 <div className='backend' onClick={() => setBackend(!backend)}>
                     <ReactCardFlip isFlipped={isFlipped2} flipDirection='horizontal' >
-                        <img className='roots' src='../static/treeRootsFinal.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
+                        <img className='roots' src='../static/treeRootsFinally.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
                         <div className={'view'} onClick={clickMeBack} key='back'>
                         <div className='card-back'>
                             <h3 className='skills-title'>Back End</h3>
-                                <div className='card-icons'>
+                                <div className='card-icons back'>
                                     {/* Git */}
                                     <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} />
 
@@ -231,7 +231,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             </ScrollAnimation>
 
         </div>
-        <Transition image={image} dark={dark} />
+        <Transition image={image} dark={dark} contact={contact} />
         </div>
         <style jsx>{`
                 .light {
@@ -249,14 +249,14 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-
                     // justify-content: space-around;
                     padding: 1%;
                     padding-top: 2%;
                 }
 
                 .sunflower, .roots {
-                    max-width: 600px;
+                    // max-width: 600px;
+                    max-width: 100%;
                     filter: grayscale(100%);
                     animation: colorFadeOut 2s, shapeShiftOut 2s;
                     border-radius: 50%;
@@ -267,10 +267,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 }
                 
                 .sunflower:hover, .roots:hover {
+                    width: 100%;
+                    height: 100%;
                     cursor: pointer;
                     animation: colorFadeIn 2s, shapeShiftIn 2s;
                     filter: grayscale(0%);
-                    border-radius: 50px;
+                    border-radius: 12px;
                     // border: 3px solid #b80c09
                     -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
@@ -283,8 +285,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     
                 }
                 .frontend, .backend {
-                    width: 35%;
-                    // margin-top: 2%;
+                    max-width: 100%;
+                    width: 450px;
+                    height: 450px;
+                    margin-top: 1%;
                     // border: 1px solid red;
                     display: flex;
                     flex-direction: column;
@@ -313,11 +317,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     flex-wrap: wrap;
                     flex-direction: row;
                     justify-content: space-between;
-                    width: 100%;
-                    max-width: 600px;
-                    max-height: 400px;
-                    height: 350px;
-                    width: 550px;
+                    max-width: 100%;
                     background: #fbfbf8;
                     border-radius: 50px;
                     padding: 2%;
@@ -326,21 +326,31 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    width: 425px;
+                    height: 425px;
                 }
                 .card-back {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    // width: 450px;
+                    // height: 450px;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+                .back {
+                    width: 450px;
+                    height: 450px;
                 }
                 .card-icons {
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
                     justify-content: space-between;
-                    width: 100%;
-                    max-width: 600px;
-                    max-height: 400px;
+                    // width: 100%;
+                    max-width: 100%;
+                    // max-height: 400px;
 
                 }
                 h2 {
@@ -403,12 +413,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         border-radius: 50%;
                     }
                     to {
-                        border-radius: 50px;
+                        border-radius: 12px;
                     }
                 }
                 @keyframes shapeShiftOut {
                     from {
-                        border-radius: 50px;
+                        border-radius: 12px;
                     }
                     to {
                         border-radius: 50%;
@@ -430,6 +440,26 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         opacity: 0;
                     }
                 }
+                // @keyframes circleIn {
+                //     from {
+                //         max-width: 498px;
+                //         max-height: 498px;
+                //     }
+                //     to {
+                //         max-width: 100%;
+                //         max-height: 100%;
+                //     }
+                // }
+                // @keyframes circleOut {
+                //     from {
+                //         max-width: 100%;
+                //         max-height: 100%;
+                //     }
+                //     to {
+                //         max-width: 498px;
+                //         max-height: 498px;
+                //     }
+                // }
                 .animate {
                     opacity: 1;
                 }
@@ -452,6 +482,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 .gauge {
                     background-image: url('../static/DarkBlueBadge.png');
                     background-size: cover;
+                    max-width: 100%;
                     width: 200px;
                     height: 175px;
                     display: flex;

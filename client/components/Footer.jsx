@@ -1,5 +1,7 @@
 import React from 'react'
 import Particles from 'react-particles-js'
+import { animateScroll as scroll } from 'react-scroll'
+import { TiArrowUpThick } from "react-icons/ti";
 
 const particleOpt = {
     "particles": {
@@ -113,9 +115,32 @@ const particleOpt = {
   }
 
 export default function Footer() {
+
+    const particles = {
+        width: '100%',
+        marginTop: '-13%',
+        backgroundColor: '#e5e7e6',
+        zIndex: -3
+        
+    }
+    const arrowUpIconDark = {
+        display: 'flex',
+        justifyContent: 'center',
+        color: '#e5e7e6',
+        marginTop: '-8%',
+        fontSize: '4rem',
+        border: '1px solid red',
+        zIndex: '9999 !important'
+    }
+
+    const scrollToTop = () => {
+        scroll.scrollToTop()
+    }
+
     return (
         <>
-        <div className='particles'>
+            <h5 onClick={scrollToTop} className={'arrow-up-icon-dark'}><TiArrowUpThick /></h5>
+        <div className={'particles'}>
             <Particles params={particleOpt} />
         </div>
         <style jsx>{`
@@ -124,7 +149,22 @@ export default function Footer() {
             margin-top: -13%;
             background-color: #e5e7e6;
             z-index: -3;
+            
         }
+        .arrow-up-icon-dark {
+            display: flex;
+            justify-content: center;
+            color: #e5e7e6;
+            margin-top: -8%;
+            font-size: 4rem;
+            border: 1px solid red;
+            z-index: 9999 !important;
+        }
+        // .contact-arrow {
+        //     color: red;
+        //     // z-index: 99;
+        //     border: 1px solid green;
+        // }
       `}</style>
         </>
     )
