@@ -212,6 +212,9 @@ export default function Home() {
             margin-top: 200px;
             font-size: 4rem;
         }
+        .arrow-down:hover {
+          cursor: pointer;
+        }
         .clear {
           z-index: 50;
           margin-top: -50%;
