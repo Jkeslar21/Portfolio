@@ -41,12 +41,13 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
     
                 {skills ? <h2 className='title-center'><span className={dark ? 'title-dark title-skills' : 'title title-skills'}>{title}</span></h2> : <h2 className='title-center'><span className={dark ? 'title-dark' : 'title'}>{title}</span></h2>}
 
-            {/* </ScrollAnimation> */}
+            </ScrollAnimation>
 
                        {/* Dynamic Sections */}
 
             {skills &&
             <>
+            <ScrollAnimation animateIn='fadeIn' duration={2}>
             <div className='images'>
                 <div className='frontend'>
                     <ReactCardFlip isFlipped={isFlipped} flipDirection='horizontal' >
@@ -163,12 +164,13 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     <h4 style={{ color: '#000c1f', fontWeight: 'bolder'}}>Dynamic</h4>
                     <p style={{ color: '#141301'}}>reflects real-time changes in values with activity.  Built with DRY, reusable components. </p>
                 </div>
-
             </div>
+            </ScrollAnimation>
             </>}
 
             {portfolio &&
             <>
+            <ScrollAnimation animateIn='fadeIn' duration={2}>
             <p className={dark ? null : 'light-text'}>PORTFOLIO CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
             Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
             Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
@@ -187,10 +189,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
             Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
             </p>
+            </ScrollAnimation>
             </>}
 
             {resume &&
             <>
+            <ScrollAnimation animateIn='fadeIn' duration={2}>
             <p className={dark ? null : 'light-text'}>RESUME CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
             Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
             Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
@@ -209,11 +213,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
             Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
             </p>
+            </ScrollAnimation>
             </>}
 
             {contact &&
             <>
-            <div className='test-contact'>
+            <ScrollAnimation animateIn='fadeIn' duration={2}>
             <p className={dark ? null : 'light-text'}>CONTACT CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
             Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
             Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
@@ -232,10 +237,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
             Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
             </p>
-            <h5 onClick={scrollToTop} className={'arrow-up-icon-dark'}><TiArrowUpThick /></h5>
-            </div>
-            </>}
             </ScrollAnimation>
+            <h5 onClick={scrollToTop} className={'arrow-up-icon-dark'}><TiArrowUpThick /></h5>
+            </>}
 
         </div>
         <Transition image={image} dark={dark} contact={contact} />
