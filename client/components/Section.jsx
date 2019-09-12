@@ -50,7 +50,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     <div className={'view'} onClick={clickMe} key='back'>
                     <div className='card-back'>
                         <h3 className="skills-title">Front End</h3>
-                            <div className='card-icons back'>
+                            <div className='card-icons'>
                                 {/* Git */}
                                 <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} />
                                 
@@ -95,7 +95,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         <div className={'view'} onClick={clickMeBack} key='back'>
                         <div className='card-back'>
                             <h3 className='skills-title'>Back End</h3>
-                                <div className='card-icons back'>
+                                <div className='card-icons'>
                                     {/* Git */}
                                     <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} />
 
@@ -321,13 +321,13 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     background: #fbfbf8;
                     border-radius: 50px;
                     padding: 2%;
-                    margin: 3%;
+                    // margin: 1% 0;
                     cursor: pointer;
                     -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
-                    width: 425px;
-                    height: 425px;
+                    width: 420px;
+                    height: 420px;
                 }
                 .card-back {
                     display: flex;
@@ -338,10 +338,6 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     // height: 450px;
                     max-width: 100%;
                     max-height: 100%;
-                }
-                .back {
-                    width: 450px;
-                    height: 450px;
                 }
                 .card-icons {
                     display: flex;
