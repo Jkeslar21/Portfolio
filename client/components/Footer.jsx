@@ -139,7 +139,7 @@ export default function Footer() {
 
     return (
         <>
-            <h5 onClick={scrollToTop} className={'arrow-up-icon-dark'}><TiArrowUpThick /></h5>
+            {/* <h5 onClick={scrollToTop} className={'arrow-up-icon-dark'}><TiArrowUpThick /></h5> */}
         <div className={'particles'}>
             <Particles params={particleOpt} />
         </div>
@@ -148,7 +148,7 @@ export default function Footer() {
             width: 100%;
             margin-top: -13%;
             background-color: #e5e7e6;
-            z-index: -3;
+            z-index: -99;
             
         }
         .arrow-up-icon-dark {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-// import { animateScroll as scroll } from 'react-scroll'
+import { animateScroll as scroll } from 'react-scroll'
 import Transition from '../components/Transition'
-// import { TiArrowUpThick } from "react-icons/ti";
+import { TiArrowUpThick } from "react-icons/ti";
 import ScrollAnimation from 'react-animate-on-scroll';
 import ReactCardFlip from 'react-card-flip';
 import { DiReact, DiJavascript1, DiBootstrap, DiSass, DiLess, DiCss3, DiHtml5, DiGithubBadge, DiGit, DiNodejsSmall, DiMysql, DiPostgresql } from "react-icons/di";
@@ -26,6 +26,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
     const clickMeBack = () => {
         setBackend(!backend)
         setIsFlipped2(!isFlipped2)
+    }
+
+    const scrollToTop = () => {
+        scroll.scrollToTop()
     }
 
     return (
@@ -209,6 +213,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
             {contact &&
             <>
+            <div className='test-contact'>
             <p className={dark ? null : 'light-text'}>CONTACT CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
             Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
             Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
@@ -227,6 +232,8 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
             Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
             </p>
+            <h5 onClick={scrollToTop} className={'arrow-up-icon-dark'}><TiArrowUpThick /></h5>
+            </div>
             </>}
             </ScrollAnimation>
 
@@ -389,12 +396,15 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     color: #E5E7E6;
                     margin-top: 6%;
                 }
-                // .arrow-up-icon-dark {
-                //     color: #e5e7e6;
-                //     margin-left: 49%;
-                //     margin-top: 10%;
-                //     font-size: 2.5rem;
-                // }
+                .arrow-up-icon-dark {
+                    display: flex;
+                    justify-content: center;
+                    color: #e5e7e6;
+                    font-size: 4rem ;
+                    position: relative;
+                    top: 300px;
+                    // z-index: 99;
+                }
                 // .arrow-up-icon {
                 //     color: #000c1f;
                 //     margin-left: 49%;
