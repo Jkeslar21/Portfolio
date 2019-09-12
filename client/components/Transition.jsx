@@ -17,6 +17,13 @@ export default function Transition({image, dark, home, contact}) {
             <style jsx>{`
                 .image {
                     width: 100%;
+
+
+                    -webkit-user-select: none; /* Webkit */
+                    -moz-user-select: none;    /* Firefox */
+                    -ms-user-select: none;     /* IE 10  */
+                    -o-user-select: none;
+                    user-select: none;
                 }
                 img {
                     width: 100%;
@@ -37,6 +44,7 @@ export default function Transition({image, dark, home, contact}) {
                     font-size: 4rem;
                     // z-index: 9999;
                 }
+                
                 // .light-arrow {
                 //     color: #e5e7e6;
                 // }

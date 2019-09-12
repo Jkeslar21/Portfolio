@@ -163,6 +163,12 @@ export default function Home() {
         .wrapper {
             width: 100%;
             // background-color: #141301;
+
+            // -webkit-user-select: none; /* Webkit */
+            // -moz-user-select: none;    /* Firefox */
+            // -ms-user-select: none;     /* IE 10  */
+            // -o-user-select: none;
+            // user-select: none;   
         }
         h1 {
             // color: #e5e7e6;
@@ -171,12 +177,26 @@ export default function Home() {
             // margin-top: 2%;
             margin-top: 6%;
             font-family: 'Raleway', sans-serif;
+
+            -webkit-user-select: none; /* Webkit */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* IE 10  */
+            /* Currently not supported in Opera but will be soon */
+            -o-user-select: none;
+            user-select: none;   
         }
         h4 {
             color: #b7b5b3;
             font-size: 2.5rem;
             margin-top: 35px;
             font-family: 'Raleway', sans-serif;
+
+            -webkit-user-select: none; /* Webkit */
+                    -moz-user-select: none;    /* Firefox */
+                    -ms-user-select: none;     /* IE 10  */
+                    /* Currently not supported in Opera but will be soon */
+                    -o-user-select: none;
+                    user-select: none;   
         }
         img {
             border-radius: 21px;

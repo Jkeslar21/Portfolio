@@ -238,12 +238,25 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     background-color: #e5e7e6;
                     margin-top: -5px;
                     font-family: 'Raleway', sans-serif;
+
+
+                    -webkit-user-select: none; /* Webkit */
+                    -moz-user-select: none;    /* Firefox */
+                    -ms-user-select: none;     /* IE 10  */
+                    -o-user-select: none;
+                    user-select: none;          
                 }
                 .dark {
                     background-color: #000c1f;
                     margin-top: -5px;
                     color: #e5e7e6;
                     font-family: 'Raleway', sans-serif;
+
+                    -webkit-user-select: none; /* Webkit */
+                    -moz-user-select: none;    /* Firefox */
+                    -ms-user-select: none;     /* IE 10  */
+                    -o-user-select: none;
+                    user-select: none;   
                 }
                 .images {
                     display: flex;
