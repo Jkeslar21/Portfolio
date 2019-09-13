@@ -92,7 +92,6 @@
     "backend": {
         "git": {
             "icon": "DiGit",
-            "styles": { "fontSize": "6rem", "color": "#F34F29"},
             "name": "Git",
             "subtitle": "System software",
             "description": "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.",
@@ -101,7 +100,6 @@
         },
         "github": {
             "icon": "DiGithubBadge",
-            "styles": "gitHubStyles",
             "name": "GitHub",
             "subtitle": "Software developer",
             "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
@@ -109,7 +107,6 @@
         },
         "node": {
             "icon": "iNodejsSmall",
-            "styles": "nodeStyles",
             "name": "Node.js",
             "subtitle": "JavaScript run-time environment",
             "description": "Node.js is an open-source, cross-platform, JavaScript run-time environment that executes JavaScript code outside of a browser.",
@@ -117,7 +114,6 @@
         },
         "express": {
             "icon": "img src='../static/expressFinal.png' alt='Next Icon'",
-            "styles": "expressStyles",
             "name": "Express.js",
             "subtitle": "Software",
             "description": "Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js.",
@@ -125,7 +121,6 @@
         },
         "mysql": {
             "icon": "DiMysql",
-            "styles": "mySqlStyles",
             "name": "MySQL",
             "subtitle": "System software",
             "description": "MySQL is an open-source relational database management system. Its name is a combination of \"My\", the name of co-founder Michael Widenius's daughter, and \"SQL\", the abbreviation for Structured",
@@ -133,7 +128,6 @@
         },
         "postgres": {
             "icon": "DiPostgresql",
-            "styles": "postgresStyles",
             "name": "PostgreSQL",
             "subtitle": "System software",
             "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and technical standards compliance. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users.",
@@ -177,3 +171,22 @@
 
 {/* Next */}
 <img src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} onClick={()=>setNext(!next)} icon={icon} />
+
+
+ {/* Git */}
+ <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=>setGit(!git)} />
+
+ {/* GitHub */}
+ <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}} onClick={()=>setGitHub(!gitHub)} />
+
+ {/* Node */}
+ <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} onClick={()=>setNode(!node)} />
+
+ {/* Express */}
+ <img src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} onClick={()=>setExpress(!express)} />
+
+ {/* MySQL */}
+ <DiMysql style={{ fontSize: '6rem', color: '#00618A', marginLeft: '14%'}} onClick={()=>setMySQL(!mySQL)} />
+
+ {/* PostgreSQL */}
+ <DiPostgresql style={{ fontSize: '6rem', color: '#336791', marginRight: '12%'}} onClick={()=>setPostgres(!postgres)} />
