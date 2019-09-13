@@ -7,7 +7,7 @@ import ReactCardFlip from 'react-card-flip';
 import { DiReact, DiJavascript1, DiBootstrap, DiSass, DiLess, DiCss3, DiHtml5, DiGithubBadge, DiGit, DiNodejsSmall, DiMysql, DiPostgresql } from "react-icons/di";
 import { FaChartLine, FaGlobeAmericas } from "react-icons/fa";
 import { MdPhonelink, MdLightbulbOutline } from "react-icons/md";
-
+import ActiveCard from './icon/ActiveCard'
 
 export default function Section({title, id, image, classNameProp, dark, skills, portfolio, resume, contact}) {
     const [isFlipped, setIsFlipped] = useState(false)
@@ -15,23 +15,52 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
     const [backend, setBackend] = useState(false)
     const [frontend, setFrontend] = useState(false)
 
+    // Icon Selectors
+    const [git, setGit] = useState(false)
+    const [gitHub, setGitHub] = useState(false)
+    const [html5, setHtml5] = useState(false)
+    const [css3, setCss3] = useState(false)
+    const [less, setLess] = useState(false)
+    const [sass, setSass] = useState(false)
+    const [bootstrap, setBootstrap] = useState(false)
+    const [javaScript, setJavaScript] = useState(false)
+    const [react, setReact] = useState(false)
+    const [redux, setRedux] = useState(false)
+    const [next, setNext] = useState(false)
+    const [node, setNode] = useState(false)
+    const [express, setExpress] = useState(false)
+    const [mySQL, setMySQL] = useState(false)
+    const [postgres, setPostgres] = useState(false)
+
+    const [activeSkill, setActiveSkill] = useState(null)
+
     // const scrollToTop = () => {
     //     scroll.scrollToTop()
     // }
 
-    const clickMe = () => {
-        setFrontend(!frontend)
-        setIsFlipped(!isFlipped)
+    const clickMeFront = () => {
+        setFrontend(true)
+        setIsFlipped(true)
+    }
+    const clickMeFrontBack = () => {
+        setFrontend(false)
+        setIsFlipped(false)
+        setActiveSkill(null)
     }
     const clickMeBack = () => {
-        setBackend(!backend)
-        setIsFlipped2(!isFlipped2)
+        setBackend(true)
+        setIsFlipped2(true)
+    }
+    const clickMeBackFront = () => {
+        setBackend(false)
+        setIsFlipped2(false)
+        setActiveSkill(null)
     }
 
     const scrollToTop = () => {
         scroll.scrollToTop()
     }
-
+   
     return (
         <>
             <div className={classNameProp}>
@@ -48,80 +77,74 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             {skills &&
             <>
             <ScrollAnimation animateIn='fadeIn' duration={2}>
-            <div className='images'>
-                <div className='frontend'>
-                    <ReactCardFlip isFlipped={isFlipped} flipDirection='horizontal' >
-                    <img  className={'sunflower'} src='../static/treeTopFinally.png' alt='Sunflower Image' key={frontend ? null : 'front'} onClick={clickMe} />
-                    <div className={'view'} onClick={clickMe} key='back'>
-                    <div className='card-back'>
-                        <h3 className="skills-title">Front End</h3>
-                            <div className='card-icons'>
-                                {/* Git */}
-                                <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} />
-                                
-                                {/* GitHub */}
-                                <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}} />
-
-                                {/* HTML5 */}
-                                <DiHtml5 style={{ fontSize: '6rem', color: '#E54D26'}} />
-
-                                {/* CSS3 */}
-                                <DiCss3 style={{ fontSize: '6rem', color: '#3D8FC6'}} />
-
-                                {/* LESS */}
-                                <DiLess style={{ fontSize: '6rem', color: '#2A4D80'}} />
-
-                                {/* SASS */}
-                                <DiSass style={{ fontSize: '6rem', color: '#CC6699'}} />
-
-                                {/* Bootstrap */}
-                                <DiBootstrap style={{ fontSize: '6rem', color: '#5B4282'}} />
-
-                                {/* JavaScript */}
-                                <DiJavascript1 style={{ fontSize: '6rem', color: '#F0DB4F'}} />
-
-                                {/* React */}
-                                <DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} />
-
-                                {/* Redux */}
-                                <img src='../static/redux.png' alt='Redux Icon' style={{ width: '75px', maxHeight: '70px', margin: '1%' }} />
-                                
-                                {/* Next */}
-                                <img src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginLeft: '1%' }} />
-                            </div>
-                    </div>
-                    </div>
-                    </ReactCardFlip>                 
-                </div>
-
-                <div className='backend' onClick={() => setBackend(!backend)}>
-                    <ReactCardFlip isFlipped={isFlipped2} flipDirection='horizontal' >
-                        <img className='roots' src='../static/treeRootsFinally.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
-                        <div className={'view'} onClick={clickMeBack} key='back'>
+            <div className='images-modal'>
+                <div className='images'>
+                    <div className='frontend'>
+                        <ReactCardFlip isFlipped={isFlipped} flipDirection='horizontal' >
+                        <img  className={'sunflower'} src='../static/treeTopFinally.png' alt='Tree Image' key={frontend ? null : 'front'} onClick={clickMeFront} />
+                        <div className={'view'} key='back'>
                         <div className='card-back'>
-                            <h3 className='skills-title'>Back End</h3>
+                            <div className='x'><p className='close-button' onClick={clickMeFrontBack}>X</p></div>
+                            <h3 className="skills-title">Front End</h3>
                                 <div className='card-icons'>
-                                    {/* Git */}
-                                    <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} />
 
-                                    {/* GitHub */}
-                                    <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}} />
+                                    {icons.frontend.map(icon => <>
+                                    {icon.icon === "DiGit" ? <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "GiGithubBadge" ? <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiHtml5" ? <DiHtml5 style={{ fontSize: '6rem', color: '#E54D26'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiCss3" ? <DiCss3 style={{ fontSize: '6rem', color: '#3D8FC6'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiLess" ? <DiLess style={{ fontSize: '6rem', color: '#2A4D80'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiSass" ? <DiSass style={{ fontSize: '6rem', color: '#CC6699'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiBootstrap" ? <DiBootstrap style={{ fontSize: '6rem', color: '#5B4282'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiJavascript1" ? <DiJavascript1 style={{ fontSize: '6rem', color: '#F0DB4F'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiReact" ? <DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "img src='../static/redux.png' alt='Redux Icon'" ? <img src='../static/redux.png' alt='Redux Icon' style={{ width: '75px', maxHeight: '70px', margin: '1%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "img src='../static/next-text.png' alt='Next Icon'" ? <img src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} onClick={()=> setActiveSkill(icon)} /> :
+                                null
+                                }
+                                    </>)}
 
-                                    {/* Node */}
-                                    <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} />
-
-                                    {/* Express */}
-                                    <img src='../static/expressFinal.png' alt='Next Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} />
-
-                                    {/* MySQL */}
-                                    <DiMysql style={{ fontSize: '6rem', color: '#00618A'}} />
-
-                                    {/* PostgreSQL */}
-                                    <DiPostgresql style={{ fontSize: '6rem', color: '#336791'}} />
                                 </div>
-                            </div>
-                        </div>  
-                    </ReactCardFlip>
+                        </div>
+                        </div>
+                        </ReactCardFlip>                 
+                    </div>
+
+                    <div className='backend'>
+                        <ReactCardFlip isFlipped={isFlipped2} flipDirection='horizontal' >
+                            <img className='roots' src='../static/treeRootsFinally.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
+                            <div className={'view'} key='back'>
+                            <div className='card-back'>
+                            <div className='x'><p className='close-button' onClick={clickMeBackFront}>X</p></div>
+                                <h3 className='skills-title'>Back End</h3>
+                                    <div className='card-icons'>
+                                        {/* Git */}
+                                        <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=>setGit(!git)} />
+
+                                        {/* GitHub */}
+                                        <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}} onClick={()=>setGitHub(!gitHub)} />
+
+                                        {/* Node */}
+                                        <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} onClick={()=>setNode(!node)} />
+
+                                        {/* Express */}
+                                        <img src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} onClick={()=>setExpress(!express)} />
+
+                                        {/* MySQL */}
+                                        <DiMysql style={{ fontSize: '6rem', color: '#00618A', marginLeft: '14%'}} onClick={()=>setMySQL(!mySQL)} />
+
+                                        {/* PostgreSQL */}
+                                        <DiPostgresql style={{ fontSize: '6rem', color: '#336791', marginRight: '12%'}} onClick={()=>setPostgres(!postgres)} />
+
+                                    </div>
+                                </div>
+                            </div>  
+                        </ReactCardFlip>
+                    </div>
+                </div>
+                <div className='modal'>
+                     {frontend || backend ? <h6 className={activeSkill && "icon-selected"}>Select an Icon</h6> : <h6>Select an Image</h6>}
+                     {activeSkill && <ActiveCard activeSkill={activeSkill} /> }
                 </div>
             </div>
 
@@ -328,6 +351,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 .skills-title {
                     font-size: 2.1rem;
                     margin-bottom: 5%;
+                    margin-top: -20%;
                     // font-style: oblique;
                 }
                 .skills-title:hover {
@@ -335,7 +359,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
                 }
                 .view {
-                    animation: fadeIn 1s;
+                    // animation: fadeIn 1s;
                     opacity: 1;
                     display: flex;
                     flex-wrap: wrap;
@@ -343,7 +367,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     justify-content: space-between;
                     max-width: 100%;
                     background: #fbfbf8;
-                    border-radius: 50px;
+                    border-radius: 12px;
                     padding: 2%;
                     // margin: 1% 0;
                     cursor: pointer;
@@ -526,11 +550,182 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 .section-content {
                     margin-bottom: 2%;
                 }
+                .modal {
+                    width: 450px;
+                    height: 600px;
+                    border: 1px solid red;
+                    margin-top: 8%;
+                    max-width: 100%;
+                    background: #fbfbf8;
+                    border-radius: 12px;
+                    padding: 2%;
+                    -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                }
+                .images-modal {
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+                .x {
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-end;
+                }
+                .close-button {
+                    margin-right: 10%;
+                    margin-bottom: 20%;
+                    font-size: 1.5rem;
+                    font-weight: bolder;
+                }
+                .icon-selected {
+                    display: none;
+                }
       `}</style>
     </>
     )
 }
 
-
-// dark black #141301
-// medium grey #b7b5b3
+const icons = {
+    "frontend": [
+        {
+            "icon": "DiGit",
+            "styles": "gitStyles",
+            "name": "Git",
+            "subtitle": "System software",
+            "description": "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.",
+            "date_learned": "January 2019"
+        },
+        {
+            "icon": "DiGithubBadge",
+            "styles": "gitHubStyles",
+            "name": "GitHub",
+            "subtitle": "Software developer",
+            "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
+            "date_learned": "January 2019"
+        },
+        {
+            "icon": "DiHtml5",
+            "styles": "html5Styles",
+            "name": "HTML5",
+            "subtitle": "Programming language",
+            "description": "HTML5 is a software solution stack that defines the properties and behaviors of web page content by implementing a markup based pattern to it. HTML5 is the fifth and current major version of HTML, and subsumes XHTML.",
+            "date_learned": "January 2019"
+        },
+        {
+            "icon": "DiCss3",
+            "styles": "css3Styles",
+            "name": "Cascading Style Sheets",
+            "subtitle": "Programming language",
+            "description": "CSS3 is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.1. It brings a lot of long-awaited novelties, like rounded corners, shadows, gradients, transitions or animations, as well as new layouts like multi-columns, flexible box or grid layouts.",
+            "date_learned": "January 2019"
+        },
+        {
+            "icon": "DiLess",
+            "styles": "lessStyles",
+            "name": "Less",
+            "subtitle": "Programming language",
+            "description": "Less is a dynamic preprocessor style sheet language that can be compiled into Cascading Style Sheets and run on the client side or server side. Designed by Alexis Sellier, Less is influenced by Sass and has influenced the newer \"SCSS\" syntax of Sass, which adapted its CSS-like block formatting syntax.",
+            "date_learned": "January 2019"
+        },
+        {
+            "icon": "DiSass",
+            "styles": "sassStyles",
+            "name": "Sass",
+            "subtitle": "Programming language",
+            "description": "Sass is a style sheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum. After its initial versions, Weizenbaum and Chris Eppstein have continued to extend Sass with SassScript, a simple scripting language used in Sass files. ",
+            "date_learned": "January 2019"
+        },
+        {
+            "icon": "DiBootstrap",
+            "styles": "bootstrapStyles",
+            "name": "Bootstrap",
+            "subtitle": "Front-end framework",
+            "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation and other interface components.",
+            "date_learned": "January 2019"
+        },
+        {
+            "icon": "DiJavascript1",
+            "styles": "javascriptStyles",
+            "name": "JavaScript",
+            "subtitle": "High-level programming language",
+            "description": "JavaScript, often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.",
+            "date_learned": "January 2019"
+        },
+        {
+            "icon": "DiReact",
+            "styles": "reactStyles",
+            "name": "React.js",
+            "subtitle": "Web framework",
+            "description": "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications, as it is optimal for fetching rapidly changing data that needs to be recorded.",
+            "date_learned": "February 2019"
+        },
+        {
+            "icon": "img src='../static/redux.png' alt='Redux Icon'",
+            "styles": "reduxStyles",
+            "name": "Redux",
+            "subtitle": "JavaScript library",
+            "description": "Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark.",
+            "date_learned": "February 2019"
+        },
+        {
+            "icon": "img src='../static/next-text.png' alt='Next Icon'",
+            "styles": "nextStyles",
+            "name": "Next.js",
+            "subtitle": "Web framework",
+            "description": "Next.js is a free and open source web application framework based on React.js, Node.js, Webpack and Babel.js. The framework is advertised as \"meta-framework for universal applications\".",
+            "date_learned": "August 2019"
+        }
+    ],
+    "backend": {
+        "git": {
+            "icon": "DiGit",
+            "styles": { "fontSize": "6rem", "color": "#F34F29"},
+            "name": "Git",
+            "subtitle": "System software",
+            "description": "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.",
+            "author": "Linus Torvalds",
+            "date_learned": "January 2019"
+        },
+        "github": {
+            "icon": "DiGithubBadge",
+            "styles": "gitHubStyles",
+            "name": "GitHub",
+            "subtitle": "Software developer",
+            "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
+            "date_learned": "January 2019"
+        },
+        "node": {
+            "icon": "iNodejsSmall",
+            "styles": "nodeStyles",
+            "name": "Node.js",
+            "subtitle": "JavaScript run-time environment",
+            "description": "Node.js is an open-source, cross-platform, JavaScript run-time environment that executes JavaScript code outside of a browser.",
+            "date_learned": "March 2019"
+        },
+        "express": {
+            "icon": "img src='../static/expressFinal.png' alt='Next Icon'",
+            "styles": "expressStyles",
+            "name": "Express.js",
+            "subtitle": "Software",
+            "description": "Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js.",
+            "date_learned": "March 2019"
+        },
+        "mysql": {
+            "icon": "DiMysql",
+            "styles": "mySqlStyles",
+            "name": "MySQL",
+            "subtitle": "System software",
+            "description": "MySQL is an open-source relational database management system. Its name is a combination of \"My\", the name of co-founder Michael Widenius's daughter, and \"SQL\", the abbreviation for Structured",
+            "date_learned": "March 2019"
+        },
+        "postgres": {
+            "icon": "DiPostgresql",
+            "styles": "postgresStyles",
+            "name": "PostgreSQL",
+            "subtitle": "System software",
+            "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and technical standards compliance. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users.",
+            "date_learned": "March 2019"
+        }
+    }
+}
