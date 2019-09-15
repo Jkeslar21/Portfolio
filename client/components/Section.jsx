@@ -443,18 +443,19 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     // max-height: 100%;
                     background-image: URL('../static/canopyTransparent.png');
                     // color: #fbfbf8;
-                    color: ##e5e7e6;
+                    // color: #e5e7e6;
+                    color: black;
                 }
                 .card-back-devops {
                     background-image: URL('../static/devopsTransparent.png');
-                    color: ##e5e7e6;
+                    color: #e5e7e6;
                 }
                 .card-back-dev {
                     display: flex;
                 }
                 .card-back-roots {
                     background-image: URL('../static/rootsTransparent.png');
-                    color: ##e5e7e6;
+                    color: #e5e7e6;
                 }
                 .card-icons {
                     display: flex;
