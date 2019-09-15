@@ -407,7 +407,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-width: 100%;
                     background: #fbfbf8;
                     border-radius: 12px;
-                    padding: 2%;
+                    // padding: 2%;
                     // margin: 1% 0;
                     cursor: pointer;
                     -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
@@ -451,7 +451,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     // color: #fbfbf8;
                     // color: #e5e7e6;
                     color: black;
-
+                    border-radius: 12px;
                 }
                 .card-back-devops {
                     background-image: URL('../static/devopsTransparent.png');
@@ -460,6 +460,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-height: 100%;
                     width: 680px;
                     height: 75px;
+                    border-radius: 12px;
                 }
                 .card-back-roots {
                     background-image: URL('../static/rootsTransparent.png');
@@ -468,6 +469,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-height: 100%;
                     width: 670px;
                     height: 350px;
+                    border-radius: 12px;
                 }
                 .card-icons {
                     display: flex;
