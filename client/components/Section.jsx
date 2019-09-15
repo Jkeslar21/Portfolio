@@ -96,10 +96,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                                 {/* <h2 key='front' style={{ color: 'pink', zIndex: 80}}>Front End</h2> */}
 
                         <div className={'view canopy-view'} key='back'>
-                        <div className='card-back'>
-                            <div className='x'><p className='close-button' onClick={clickMeFrontBack}>X</p></div>
-                            <h3 className="skills-title">Front End</h3>
-                                <div className='card-icons'>
+                        <div className='card-back card-back-canopy '>
+                            <div className='x opacity'><p className='close-button' onClick={clickMeFrontBack}>X</p></div>
+                            <h3 className="skills-title opacity">Front End</h3>
+                                <div className='card-icons opacity'>
 
                                     {icons.frontend.map(icon => <>
                                     
@@ -128,7 +128,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         <ReactCardFlip isFlipped={isFlipped3} flipDirection='horizontal' >
                         <img  className={'devops'} src='../static/devops.png' alt='Tree Canopy Image' key={devops ? null : 'front'} onClick={clickMeDev} />
                         <div className={'view dev-view'} key='back'>
-                        <div className='card-back-dev'>
+                        <div className='card-back-dev card-back-devops'>
                             <div className='x'><p className='close-button' onClick={clickMeDevBack}>X</p></div>
                             <h3 className="skills-title">DevOps</h3>
                                 <div className='card-icons'>
@@ -151,7 +151,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         <ReactCardFlip isFlipped={isFlipped2} flipDirection='horizontal' >
                             <img className='roots' src='../static/roots.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
                             <div className={'view roots-view'} key='back'>
-                            <div className='card-back'>
+                            <div className='card-back card-back-roots'>
                             <div className='x'><p className='close-button' onClick={clickMeBackFront}>X</p></div>
                                 <h3 className='skills-title'>Back End</h3>
                                     <div className='card-icons'>
@@ -432,8 +432,29 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-width: 100%;
                     max-height: 100%;
                 }
+                .card-back-canopy {
+                    // display: flex;
+                    // flex-direction: column;
+                    // justify-content: center;
+                    // align-items: center;
+                    // width: 450px;
+                    // height: 450px;
+                    // max-width: 100%;
+                    // max-height: 100%;
+                    background-image: URL('../static/canopyTransparent.png');
+                    // color: #fbfbf8;
+                    color: ##e5e7e6;
+                }
+                .card-back-devops {
+                    background-image: URL('../static/devopsTransparent.png');
+                    color: ##e5e7e6;
+                }
                 .card-back-dev {
                     display: flex;
+                }
+                .card-back-roots {
+                    background-image: URL('../static/rootsTransparent.png');
+                    color: ##e5e7e6;
                 }
                 .card-icons {
                     display: flex;
@@ -603,12 +624,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-height: 270px;
                     margin-top: 17%;
                     max-width: 100%;
-                    background: #fbfbf8;
+                    // background: #fbfbf8;
                     border-radius: 12px;
                     padding: 2%;
-                    -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
-                    -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
-                    box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    // -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    // -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    // box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                 }
                 .images-modal {
                     display: flex;
@@ -648,8 +669,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     border: 2px solid #1f2a44;
                     border-radius: 12px;
                     box-sizing: border-box;
-                }
-                
+                }                
       `}</style>
     </>
     )
