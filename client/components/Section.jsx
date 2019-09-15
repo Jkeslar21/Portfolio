@@ -12,8 +12,10 @@ import ActiveCard from './icon/ActiveCard'
 export default function Section({title, id, image, classNameProp, dark, skills, portfolio, resume, contact}) {
     const [isFlipped, setIsFlipped] = useState(false)
     const [isFlipped2, setIsFlipped2] = useState(false)
+    const [isFlipped3, setIsFlipped3] = useState(false)
     const [backend, setBackend] = useState(false)
     const [frontend, setFrontend] = useState(false)
+    const [devops, setDevops] = useState(false)
 
     // Icon Selectors
     // const [git, setGit] = useState(false)
@@ -56,11 +58,19 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
         setIsFlipped2(false)
         setActiveSkill(null)
     }
-
+    const clickMeDev = () => {
+        setDevops(true)
+        setIsFlipped3(true)
+    }
+    const clickMeDevBack = () => {
+        setDevops(false)
+        setIsFlipped3(false)
+        setActiveSkill(null)
+    }
     const scrollToTop = () => {
         scroll.scrollToTop()
     }
-   
+        
     return (
         <>
             <div className={classNameProp}>
@@ -81,14 +91,18 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 <div className='images'>
                     <div className='frontend'>
                         <ReactCardFlip isFlipped={isFlipped} flipDirection='horizontal' >
-                        <img  className={'sunflower'} src='../static/treeTopFinally.png' alt='Tree Image' key={frontend ? null : 'front'} onClick={clickMeFront} />
-                        <div className={'view'} key='back'>
+                                <img  className={'sunflower'} src='../static/treeFINAL.png' alt='Tree Canopy Image' key={frontend ? null : 'front'} onClick={clickMeFront} />
+
+                                {/* <h2 key='front' style={{ color: 'pink', zIndex: 80}}>Front End</h2> */}
+
+                        <div className={'view canopy-view'} key='back'>
                         <div className='card-back'>
                             <div className='x'><p className='close-button' onClick={clickMeFrontBack}>X</p></div>
                             <h3 className="skills-title">Front End</h3>
                                 <div className='card-icons'>
 
                                     {icons.frontend.map(icon => <>
+                                    
                                     {icon.icon === "DiGit" ? <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "DiGithubBadge" ? <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "DiHtml5" ? <DiHtml5 style={{ fontSize: '6rem', color: '#E54D26'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
@@ -99,7 +113,30 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                                 icon.icon === "DiJavascript1" ? <DiJavascript1 style={{ fontSize: '6rem', color: '#F0DB4F'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "DiReact" ? <DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "img src='../static/redux.png' alt='Redux Icon'" ? <img src='../static/redux.png' alt='Redux Icon' style={{ width: '75px', maxHeight: '70px', margin: '1%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "img src='../static/next-text.png' alt='Next Icon'" ? <img src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} onClick={()=> setActiveSkill(icon)} /> :
+                                icon.icon === "img src='../static/next-text.png' alt='Next Icon'" ? <img src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} onClick={()=> setActiveSkill(icon)} />  :
+                                null
+                                }
+                                    </>)}
+
+                                </div>
+                        </div>
+                        </div>
+                        </ReactCardFlip>                 
+                    </div>
+
+                    <div className='devOps'>
+                        <ReactCardFlip isFlipped={isFlipped3} flipDirection='horizontal' >
+                        <img  className={'devops'} src='../static/devops.png' alt='Tree Canopy Image' key={devops ? null : 'front'} onClick={clickMeDev} />
+                        <div className={'view dev-view'} key='back'>
+                        <div className='card-back-dev'>
+                            <div className='x'><p className='close-button' onClick={clickMeDevBack}>X</p></div>
+                            <h3 className="skills-title">DevOps</h3>
+                                <div className='card-icons'>
+
+                                    {icons.devops.map(icon => <>
+                                    
+                                    {icon.icon === "DiGit" ? <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiGithubBadge" ? <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 null
                                 }
                                     </>)}
@@ -112,8 +149,8 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
                     <div className='backend'>
                         <ReactCardFlip isFlipped={isFlipped2} flipDirection='horizontal' >
-                            <img className='roots' src='../static/treeRootsFinally.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
-                            <div className={'view'} key='back'>
+                            <img className='roots' src='../static/roots.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
+                            <div className={'view roots-view'} key='back'>
                             <div className='card-back'>
                             <div className='x'><p className='close-button' onClick={clickMeBackFront}>X</p></div>
                                 <h3 className='skills-title'>Back End</h3>
@@ -124,6 +161,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                                 icon.icon === "DiGithubBadge" ? <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "iNodejsSmall" ? <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "img src='../static/expressFinal.png' alt='Express Icon'" ? <img src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "img src='../static/knexjs.png' alt='Knex.js Icon'" ? <img src='../static/knexjs.png' alt='Knex.js Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "DiMysql" ? <DiMysql style={{ fontSize: '6rem', color: '#00618A', marginLeft: '14%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "DiPostgresql" ? <DiPostgresql style={{ fontSize: '6rem', color: '#336791', marginRight: '12%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 null
@@ -136,8 +174,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     </div>
                 </div>
                 <div className='modal'>
+                <ScrollAnimation animateIn='fadeIn' duration={2}>
                      {frontend || backend ? <h6 className={activeSkill ? "icon-selected" : "select-icon"}>Select an Icon</h6> : <h6 className='select-image'>Select an Image</h6>}
                      {activeSkill && <ActiveCard activeSkill={activeSkill} /> }
+                </ScrollAnimation>
                 </div>
             </div>
 
@@ -294,7 +334,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     padding-top: 2%;
                 }
 
-                .sunflower, .roots {
+                .sunflower, .roots, .devops {
                     // max-width: 600px;
                     max-width: 100%;
                     filter: grayscale(100%);
@@ -306,7 +346,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                 }
                 
-                .sunflower:hover, .roots:hover {
+                .sunflower:hover, .roots:hover, .devops:hover {
                     width: 100%;
                     height: 100%;
                     cursor: pointer;
@@ -326,9 +366,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 }
                 .frontend, .backend {
                     max-width: 100%;
-                    width: 450px;
-                    height: 450px;
-                    margin-top: 1%;
+                    // width: 450px;
+                    // height: 450px;
+                    // margin-top: 1%;
                     // border: 1px solid red;
                     display: flex;
                     flex-direction: column;
@@ -367,8 +407,20 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
-                    width: 420px;
-                    height: 420px;
+                    // width: 420px;
+                    // height: 420px;
+                }
+                .canopy-view {
+                    width: 680px;
+                    height: 350px;
+                }
+                .dev-view {
+                    width: 680px;
+                    height: 75px;
+                }
+                .roots-view {
+                    width: 670px;
+                    height: 350px;
                 }
                 .card-back {
                     display: flex;
@@ -379,6 +431,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     // height: 450px;
                     max-width: 100%;
                     max-height: 100%;
+                }
+                .card-back-dev {
+                    display: flex;
                 }
                 .card-icons {
                     display: flex;
@@ -579,6 +634,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     margin-top: 25%;
                     font-size: 2rem;
                     color: #000c1f;
+                    animation: fadeIn 2s;
                 }
                 .select-image {
                     text-align: center;
@@ -586,7 +642,14 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     margin-top: 25%;
                     font-size: 2rem;
                     color: #000c1f;
+                    animation: fadeIn 2s;
                 }
+                .selector:hover {
+                    border: 2px solid #1f2a44;
+                    border-radius: 12px;
+                    box-sizing: border-box;
+                }
+                
       `}</style>
     </>
     )
@@ -594,123 +657,145 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
 const icons = {
     "frontend": [
-        {
-            "icon": "DiGit",
-            "name": "Git",
-            "subtitle": "System software",
-            "description": "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.",
-            "date_learned": "January 2019"
-        },
-        {
-            "icon": "DiGithubBadge",
-            "name": "GitHub",
-            "subtitle": "Software developer",
-            "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
-            "date_learned": "January 2019"
-        },
+        // {
+        //     "icon": "DiGit",
+        //     "name": "Git",
+        //     "subtitle": "System Software",
+        //     "description": "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.",
+        //     "date_learned": "January 2019"
+        // },
+        // {
+        //     "icon": "DiGithubBadge",
+        //     "name": "GitHub",
+        //     "subtitle": "Software Developer",
+        //     "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
+        //     "date_learned": "January 2019"
+        // },
         {
             "icon": "DiHtml5",
             "name": "HTML5",
-            "subtitle": "Programming language",
+            "subtitle": "Programming Language",
             "description": "HTML5 is a software solution stack that defines the properties and behaviors of web page content by implementing a markup based pattern to it. HTML5 is the fifth and current major version of HTML, and subsumes XHTML.",
             "date_learned": "January 2019"
         },
         {
             "icon": "DiCss3",
             "name": "CSS3",
-            "subtitle": "Programming language",
+            "subtitle": "Programming Language",
             "description": "CSS3 is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.1. It brings a lot of long-awaited novelties, like rounded corners, shadows, gradients, transitions or animations, as well as new layouts like multi-columns, flexible box or grid layouts.",
             "date_learned": "January 2019"
         },
         {
             "icon": "DiLess",
             "name": "Less",
-            "subtitle": "Programming language",
+            "subtitle": "Programming Language",
             "description": "Less is a dynamic preprocessor style sheet language that can be compiled into Cascading Style Sheets and run on the client side or server side. Designed by Alexis Sellier, Less is influenced by Sass and has influenced the newer \"SCSS\" syntax of Sass, which adapted its CSS-like block formatting syntax.",
             "date_learned": "January 2019"
         },
         {
             "icon": "DiSass",
             "name": "Sass",
-            "subtitle": "Programming language",
+            "subtitle": "Programming Language",
             "description": "Sass is a style sheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum. After its initial versions, Weizenbaum and Chris Eppstein have continued to extend Sass with SassScript, a simple scripting language used in Sass files. ",
             "date_learned": "January 2019"
         },
         {
             "icon": "DiBootstrap",
             "name": "Bootstrap",
-            "subtitle": "Front-end framework",
+            "subtitle": "Front-end Framework",
             "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation and other interface components.",
             "date_learned": "January 2019"
         },
         {
             "icon": "DiJavascript1",
             "name": "JavaScript",
-            "subtitle": "High-level programming language",
+            "subtitle": "High-level Programming Language",
             "description": "JavaScript, often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.",
             "date_learned": "January 2019"
         },
         {
             "icon": "DiReact",
             "name": "React.js",
-            "subtitle": "Web framework",
+            "subtitle": "Web Framework",
             "description": "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications, as it is optimal for fetching rapidly changing data that needs to be recorded.",
             "date_learned": "February 2019"
         },
         {
             "icon": "img src='../static/redux.png' alt='Redux Icon'",
             "name": "Redux",
-            "subtitle": "JavaScript library",
+            "subtitle": "JavaScript Library",
             "description": "Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark.",
             "date_learned": "February 2019"
         },
         {
             "icon": "img src='../static/next-text.png' alt='Next Icon'",
             "name": "Next.js",
-            "subtitle": "Web framework",
+            "subtitle": "Web Framework",
             "description": "Next.js is a free and open source web application framework based on React.js, Node.js, Webpack and Babel.js. The framework is advertised as \"meta-framework for universal applications\".",
             "date_learned": "August 2019"
         }
     ],
-    "backend": [
+    "devops": [
         {
             "icon": "DiGit",
-            "styles": { "fontSize": "6rem", "color": "#F34F29"},
             "name": "Git",
-            "subtitle": "System software",
+            "subtitle": "System Software",
             "description": "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.",
-            "author": "Linus Torvalds",
             "date_learned": "January 2019"
         },
         {
             "icon": "DiGithubBadge",
-            "styles": "gitHubStyles",
             "name": "GitHub",
-            "subtitle": "Software developer",
+            "subtitle": "Software Developer",
             "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
             "date_learned": "January 2019"
-        },
+        }
+    ],
+    "backend": [
+        // {
+        //     "icon": "DiGit",
+        //     "styles": { "fontSize": "6rem", "color": "#F34F29"},
+        //     "name": "Git",
+        //     "subtitle": "System Software",
+        //     "description": "Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows.",
+        //     "date_learned": "January 2019"
+        // },
+        // {
+        //     "icon": "DiGithubBadge",
+        //     "styles": "gitHubStyles",
+        //     "name": "GitHub",
+        //     "subtitle": "Software Developer",
+        //     "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
+        //     "date_learned": "January 2019"
+        // },
         {
             "icon": "iNodejsSmall",
             "styles": "nodeStyles",
             "name": "Node.js",
-            "subtitle": "JavaScript run-time environment",
+            "subtitle": "JavaScript Run-time Environment",
             "description": "Node.js is an open-source, cross-platform, JavaScript run-time environment that executes JavaScript code outside of a browser.",
             "date_learned": "March 2019"
         },
         {
-            "icon": "img src='../static/expressFinal.png' alt='Next Icon'",
+            "icon": "img src='../static/expressFinal.png' alt='Express Icon'",
             "styles": "expressStyles",
             "name": "Express.js",
-            "subtitle": "Software",
+            "subtitle": "Web Framework",
             "description": "Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js.",
+            "date_learned": "March 2019"
+        },
+        {
+            "icon": "img src='../static/knexjs.png' alt='Knex.js Icon'",
+            "name": "Knex.js",
+            "subtitle": "JavaScript Query Builder",
+            "description": " Knex.js is a JavaScript query builder for relational databases including PostgreSQL, MySQL, SQLite3, and Oracle. It can be used with callbacks and promises. It supports transactions and connection pooling.",
             "date_learned": "March 2019"
         },
         {
             "icon": "DiMysql",
             "styles": "mySqlStyles",
             "name": "MySQL",
-            "subtitle": "System software",
+            "subtitle": "System Software",
             "description": "MySQL is an open-source relational database management system. Its name is a combination of \"My\", the name of co-founder Michael Widenius's daughter, and \"SQL\", the abbreviation for Structured",
             "date_learned": "March 2019"
         },
@@ -718,7 +803,7 @@ const icons = {
             "icon": "DiPostgresql",
             "styles": "postgresStyles",
             "name": "PostgreSQL",
-            "subtitle": "System software",
+            "subtitle": "System Software",
             "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and technical standards compliance. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users.",
             "date_learned": "March 2019"
         }

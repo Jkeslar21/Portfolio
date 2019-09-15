@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { DiReact, DiJavascript1, DiBootstrap, DiSass, DiLess, DiCss3, DiHtml5, DiGithubBadge, DiGit, DiNodejsSmall, DiMysql, DiPostgresql } from "react-icons/di";
 
 export default function ActiveCard({ activeSkill }) {
+
     return (
-        <>
+        <div>
         <div style={activeSkill.name === "Redux" ? {marginTop: '2.75%'}: null}>
             <div className="header">
                 <div className="titles">
@@ -24,13 +25,14 @@ export default function ActiveCard({ activeSkill }) {
                 activeSkill.icon === "img src='../static/next-text.png' alt='Next Icon'" ? <img src='../static/next-text.png' alt='Next Icon' style={{ width: '100px', maxHeight: '100px', marginRight: '5%' }} /> :
                 activeSkill.icon === "iNodejsSmall" ? <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} /> :
                 activeSkill.icon === "img src='../static/expressFinal.png' alt='Express Icon'" ? <img src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} /> :
+                activeSkill.icon === "img src='../static/knexjs.png' alt='Knex.js Icon'" ? <img src='../static/knexjs.png' alt='Knex.js Icon' style={{ width: '60px', height: '60px', marginTop: '2%', paddingLeft: '2%' }} /> :
                 activeSkill.icon === "DiMysql" ? <DiMysql style={{ fontSize: '6rem', color: '#00618A', marginLeft: '14%'}} /> :
                 activeSkill.icon === "DiPostgresql" ? <DiPostgresql style={{ fontSize: '6rem', color: '#336791', marginRight: '12%'}} /> :
                 null
                 }
                 </div>
             </div>
-            <p style={activeSkill.name === "Redux" ? {marginTop: '5%'} : null}>{activeSkill.description}</p>
+            <p className='description' style={activeSkill.name === "Redux" ? {marginTop: '5%'} : null}>{activeSkill.description}</p>
             <div style={activeSkill.name === "Redux" ? {marginTop: '4.5%'}: null}>{activeSkill && <p className="date"><span>Date Learned:</span> {activeSkill.date_learned}</p>}</div>
         </div>
         <style jsx>{`
@@ -60,6 +62,9 @@ export default function ActiveCard({ activeSkill }) {
         .date {
             margin-top: 4%;
         }
+        .description {
+            line-height: 1.25;
+        }
         h2 {
             font-size: 3rem;
             color: #000c1f;
@@ -75,6 +80,10 @@ export default function ActiveCard({ activeSkill }) {
             font-weight: bold;
         }
       `}</style>
-        </>
+        </div>
     )
+
+    function newFunction() {
+        return "img src='../static/expressFinal.png' alt='Express Icon'";
+    }
 }
