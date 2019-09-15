@@ -129,14 +129,20 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         <img  className={'devops'} src='../static/devops.png' alt='Tree Canopy Image' key={devops ? null : 'front'} onClick={clickMeDev} />
                         <div className={'view dev-view'} key='back'>
                         <div className='card-back-dev card-back-devops'>
-                            <div className='x'><p className='close-button' onClick={clickMeDevBack}>X</p></div>
-                            <h3 className="skills-title">DevOps</h3>
-                                <div className='card-icons'>
+                            
+                            <div className='dev-header'>
+                                <h3 className="skills-title-dev">DevOps</h3>
+                                <div className='x'><p className='close-button-dev' onClick={clickMeDevBack}>X</p></div>
+                            </div>
+                                
+                                <div className='card-icons-dev'>
 
                                     {icons.devops.map(icon => <>
                                     
                                     {icon.icon === "DiGit" ? <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 icon.icon === "DiGithubBadge" ? <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "Netlify" ? <img src='../static/netlify.png' alt='Netlify Icon' style={{ width: '75px', height: '75px', marginTop: '2.25%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "Heroku" ? <img className='heroku' src='../static/herokuu.png' alt='Heroku Icon' style={{ width: '90px', height: '90px', marginTop: '1%', paddingLeft: '2%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 null
                                 }
                                     </>)}
@@ -439,23 +445,29 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     // align-items: center;
                     // width: 450px;
                     // height: 450px;
-                    // max-width: 100%;
-                    // max-height: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
                     background-image: URL('../static/canopyTransparent.png');
                     // color: #fbfbf8;
                     // color: #e5e7e6;
                     color: black;
+
                 }
                 .card-back-devops {
                     background-image: URL('../static/devopsTransparent.png');
                     color: #e5e7e6;
-                }
-                .card-back-dev {
-                    display: flex;
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: 680px;
+                    height: 75px;
                 }
                 .card-back-roots {
                     background-image: URL('../static/rootsTransparent.png');
                     color: #e5e7e6;
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: 670px;
+                    height: 350px;
                 }
                 .card-icons {
                     display: flex;
@@ -466,6 +478,29 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-width: 100%;
                     // max-height: 400px;
 
+                }
+                .card-icons-dev {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    max-width: 100%;
+                    margin: -6% 5%;
+                }
+                .dev-header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 2%;
+
+                }
+                .skills-title-dev {
+                    color: red;
+                }
+                .close-button-dev {
+                    color: red;
+                    margin: none;
+                    padding: none;
                 }
                 h2 {
                     font-size: 4rem;
@@ -636,11 +671,11 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     display: flex;
                     justify-content: space-evenly;
                 }
-                .x {
-                    display: flex;
-                    width: 100%;
-                    justify-content: flex-end;
-                }
+                // .x {
+                //     display: flex;
+                //     width: 100%;
+                //     justify-content: flex-end;
+                // }
                 .close-button {
                     margin-right: 10%;
                     margin-bottom: 20%;
@@ -770,6 +805,20 @@ const icons = {
             "subtitle": "Software Developer",
             "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
             "date_learned": "January 2019"
+        },
+        {
+            "icon": "Netlify",
+            "name": "Netlify",
+            "subtitle": "Platform",
+            "description": "Netlify is a San Francisco-based cloud computing company that offers hosting and serverless backend services for static websites. It features continuous deployment from Git across a global application delivery network, serverless form handling, support for AWS Lambda functions, and full integration with Let's Encrypt.",
+            "date_learned": "February 2019"
+        },
+        {
+            "icon": "Heroku",
+            "name": "Heroku",
+            "subtitle": "Platform",
+            "description": "Heroku is a cloud platform as a service supporting several programming languages. One of the first cloud platforms, Heroku has been in development since June 2007, when it supported only the Ruby programming language, but now supports Java, Node.js, Scala, Clojure, Python, PHP, and Go.",
+            "date_learned": "March 2019"
         }
     ],
     "backend": [

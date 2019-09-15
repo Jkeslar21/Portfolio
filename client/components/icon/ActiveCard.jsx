@@ -28,6 +28,8 @@ export default function ActiveCard({ activeSkill }) {
                 activeSkill.icon === "img src='../static/knexjs.png' alt='Knex.js Icon'" ? <img src='../static/knexjs.png' alt='Knex.js Icon' style={{ width: '60px', height: '60px', marginTop: '2%', paddingLeft: '2%' }} /> :
                 activeSkill.icon === "DiMysql" ? <DiMysql style={{ fontSize: '6rem', color: '#00618A', marginLeft: '14%'}} /> :
                 activeSkill.icon === "DiPostgresql" ? <DiPostgresql style={{ fontSize: '6rem', color: '#336791', marginRight: '12%'}} /> :
+                activeSkill.icon === "Netlify" ? <img src='../static/netlify.png' alt='Netlify Icon' style={{ width: '75px', height: '75px', marginTop: '2.25%', paddingLeft: '2%' }} /> :
+                activeSkill.icon === "Heroku" ? <img className='heroku' src='../static/herokuu.png' alt='Heroku Icon' style={{ width: '90px', height: '90px', marginTop: '1%', paddingLeft: '2%'}} /> :
                 null
                 }
                 </div>
