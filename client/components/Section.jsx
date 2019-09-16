@@ -97,23 +97,25 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
                         <div className={'view canopy-view'} key='back'>
                         <div className='card-back card-back-canopy '>
-                            <div className='x opacity'><p className='close-button' onClick={clickMeFrontBack}>X</p></div>
-                            <h3 className="skills-title opacity">Front End</h3>
-                                <div className='card-icons opacity'>
+
+                            <div className='canopy-header'>
+                                <h3 className="skills-title opacity">Front End</h3>
+                                <div className='x opacity'><p className='close-button' onClick={clickMeFrontBack}>X</p></div>
+                            </div>
+
+                                <div className='card-icons card-icons-canopy'>
 
                                     {icons.frontend.map(icon => <>
                                     
-                                    {icon.icon === "DiGit" ? <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiGithubBadge" ? <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiHtml5" ? <DiHtml5 style={{ fontSize: '6rem', color: '#E54D26'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiCss3" ? <DiCss3 style={{ fontSize: '6rem', color: '#3D8FC6'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiLess" ? <DiLess style={{ fontSize: '6rem', color: '#2A4D80'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiSass" ? <DiSass style={{ fontSize: '6rem', color: '#CC6699'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiBootstrap" ? <DiBootstrap style={{ fontSize: '6rem', color: '#5B4282'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiJavascript1" ? <DiJavascript1 style={{ fontSize: '6rem', color: '#F0DB4F'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiReact" ? <DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "img src='../static/redux.png' alt='Redux Icon'" ? <img src='../static/redux.png' alt='Redux Icon' style={{ width: '75px', maxHeight: '70px', margin: '1%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "img src='../static/next-text.png' alt='Next Icon'" ? <img src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} onClick={()=> setActiveSkill(icon)} />  :
+                                    {icon.icon === "DiHtml5" ? <div className='icon-hover'><DiHtml5 style={{ fontSize: '6rem', color: '#E54D26'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiCss3" ? <div className='icon-hover'><DiCss3 style={{ fontSize: '6rem', color: '#3D8FC6'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiLess" ? <div className='icon-hover'><DiLess style={{ fontSize: '6rem', color: '#2A4D80'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiSass" ? <div className='icon-hover'><DiSass style={{ fontSize: '6rem', color: '#CC6699'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiBootstrap" ? <div className='icon-hover'><DiBootstrap style={{ fontSize: '6rem', color: '#5B4282'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiJavascript1" ? <div className='icon-hover'><DiJavascript1 style={{ fontSize: '6rem', color: '#F0DB4F'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiReact" ? <div className='icon-hover'><DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "img src='../static/redux.png' alt='Redux Icon'" ? <img className='icon-hover' src='../static/redux.png' alt='Redux Icon' style={{ width: '75px', maxHeight: '70px', margin: '1%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "img src='../static/next-text.png' alt='Next Icon'" ? <img className='icon-hover' src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} onClick={()=> setActiveSkill(icon)} />  :
                                 null
                                 }
                                     </>)}
@@ -139,10 +141,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
                                     {icons.devops.map(icon => <>
                                     
-                                    {icon.icon === "DiGit" ? <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiGithubBadge" ? <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "Netlify" ? <img src='../static/netlify.png' alt='Netlify Icon' style={{ width: '75px', height: '75px', marginTop: '2.25%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "Heroku" ? <img className='heroku' src='../static/herokuu.png' alt='Heroku Icon' style={{ width: '90px', height: '90px', marginTop: '1%', paddingLeft: '2%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                    {icon.icon === "DiGit" ? <div className='icon-hover'><DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiGithubBadge" ? <div className='icon-hover'><DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "Netlify" ? <img className='icon-hover' src='../static/netlify.png' alt='Netlify Icon' style={{ width: '75px', height: '75px', marginTop: '2.25%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "Heroku" ? <img className='heroku icon-hover' src='../static/herokuu.png' alt='Heroku Icon' style={{ width: '90px', height: '90px', marginTop: '1%', paddingLeft: '2%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
                                 null
                                 }
                                     </>)}
@@ -163,13 +165,13 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                                     <div className='card-icons'>
 
                                     {icons.backend.map(icon => <>
-                                    {icon.icon === "DiGit" ? <DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiGithubBadge" ? <DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "iNodejsSmall" ? <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "img src='../static/expressFinal.png' alt='Express Icon'" ? <img src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "img src='../static/knexjs.png' alt='Knex.js Icon'" ? <img src='../static/knexjs.png' alt='Knex.js Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiMysql" ? <DiMysql style={{ fontSize: '6rem', color: '#00618A', marginLeft: '14%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "DiPostgresql" ? <DiPostgresql style={{ fontSize: '6rem', color: '#336791', marginRight: '12%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                    {icon.icon === "DiGit" ? <div className='icon-hover'><DiGit style={{ fontSize: '6rem', color: '#F34F29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiGithubBadge" ? <div className='icon-hover'><DiGithubBadge style={{ fontSize: '6rem', color: '#181616'}}  onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "iNodejsSmall" ? <div className='icon-hover'><DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "img src='../static/expressFinal.png' alt='Express Icon'" ? <img className='icon-hover' src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "img src='../static/knexjs.png' alt='Knex.js Icon'" ? <img className='icon-hover' src='../static/knexjs.png' alt='Knex.js Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "DiMysql" ? <div className='icon-hover'><DiMysql style={{ fontSize: '6rem', color: '#00618A', marginLeft: '14%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiPostgresql" ? <div className='icon-hover'><DiPostgresql style={{ fontSize: '6rem', color: '#336791', marginRight: '12%'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
                                 null
                                 }
                                     </>)}
@@ -389,8 +391,8 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 }
                 .skills-title {
                     font-size: 2.1rem;
-                    margin-bottom: 5%;
-                    margin-top: -20%;
+                    // margin-bottom: 5%;
+                    // margin-top: -20%;
                     // font-style: oblique;
                 }
                 .skills-title:hover {
@@ -407,7 +409,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-width: 100%;
                     background: #fbfbf8;
                     border-radius: 12px;
-                    // padding: 2%;
+                    padding: 2% 4%;
                     // margin: 1% 0;
                     cursor: pointer;
                     -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
@@ -442,19 +444,19 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     // display: flex;
                     // flex-direction: column;
                     // justify-content: center;
-                    // align-items: center;
+                    // align-items: space-between;
                     // width: 450px;
                     // height: 450px;
                     max-width: 100%;
                     max-height: 100%;
-                    background-image: URL('../static/canopyTransparent.png');
+                    // background-image: URL('../static/canopyTransparent.png');
                     // color: #fbfbf8;
                     // color: #e5e7e6;
                     color: black;
                     border-radius: 12px;
                 }
                 .card-back-devops {
-                    background-image: URL('../static/devopsTransparent.png');
+                    // background-image: URL('../static/devopsTransparent.png');
                     color: #e5e7e6;
                     max-width: 100%;
                     max-height: 100%;
@@ -463,7 +465,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     border-radius: 12px;
                 }
                 .card-back-roots {
-                    background-image: URL('../static/rootsTransparent.png');
+                    // background-image: URL('../static/rootsTransparent.png');
                     color: #e5e7e6;
                     max-width: 100%;
                     max-height: 100%;
@@ -479,7 +481,16 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     // width: 100%;
                     max-width: 100%;
                     // max-height: 400px;
-
+                    border: 1px solid blue;
+                }
+                .card-icons-canopy {
+                    margin-top: 5%;
+                }
+                .icon-hover {
+                    opacity: .5;
+                }
+                .icon-hover:hover {
+                    opacity: 1;
                 }
                 .card-icons-dev {
                     display: flex;
@@ -488,13 +499,21 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-width: 100%;
                     margin: -6% 5%;
                 }
-                .dev-header {
+                .dev-header{
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
-                    padding: 0 2%;
-
+                    // padding: 0 2%;
+                }
+                .canopy-header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 680px;
+                    border: 1px solid red;
+                    margin-top: -65px;
                 }
                 .skills-title-dev {
                     color: red;
@@ -679,9 +698,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 //     justify-content: flex-end;
                 // }
                 .close-button {
-                    margin-right: 10%;
-                    margin-bottom: 20%;
-                    font-size: 1.5rem;
+                    // margin-right: 10%;
+                    // margin-bottom: 20%;
+                    font-size: 2.1rem;
                     font-weight: bolder;
                 }
                 .icon-selected {
