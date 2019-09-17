@@ -4,7 +4,7 @@ import { DiReact, DiJavascript1, DiBootstrap, DiSass, DiLess, DiCss3, DiHtml5, D
 export default function ActiveCard({ activeSkill }) {
 
     return (
-        <div>
+        <div className='container'>
         <div style={activeSkill.name === "Redux" ? {marginTop: '2.75%'}: null}>
             <div className="header">
                 <div className="titles">
@@ -42,6 +42,7 @@ export default function ActiveCard({ activeSkill }) {
             // color: #b7b5b3;
             // font-size: 2.5rem;
             // margin-top: 35px;
+            // border: 1px solid red;
             font-family: 'Raleway', sans-serif;
 
             -webkit-user-select: none; /* Webkit */

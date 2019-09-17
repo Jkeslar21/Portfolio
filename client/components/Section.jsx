@@ -8,6 +8,8 @@ import { DiReact, DiJavascript1, DiBootstrap, DiSass, DiLess, DiCss3, DiHtml5, D
 import { FaChartLine, FaGlobeAmericas } from "react-icons/fa";
 import { MdPhonelink, MdLightbulbOutline } from "react-icons/md";
 import ActiveCard from './icon/ActiveCard'
+import { FiDownload } from "react-icons/fi";
+// import { Document, Page } from 'react-pdf';
 
 export default function Section({title, id, image, classNameProp, dark, skills, portfolio, resume, contact}) {
     const [isFlipped, setIsFlipped] = useState(false)
@@ -16,25 +18,8 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
     const [backend, setBackend] = useState(false)
     const [frontend, setFrontend] = useState(false)
     const [devops, setDevops] = useState(false)
-
-    // Icon Selectors
-    // const [git, setGit] = useState(false)
-    // const [gitHub, setGitHub] = useState(false)
-    // const [html5, setHtml5] = useState(false)
-    // const [css3, setCss3] = useState(false)
-    // const [less, setLess] = useState(false)
-    // const [sass, setSass] = useState(false)
-    // const [bootstrap, setBootstrap] = useState(false)
-    // const [javaScript, setJavaScript] = useState(false)
-    // const [react, setReact] = useState(false)
-    // const [redux, setRedux] = useState(false)
-    // const [next, setNext] = useState(false)
-    // const [node, setNode] = useState(false)
-    // const [express, setExpress] = useState(false)
-    // const [mySQL, setMySQL] = useState(false)
-    // const [postgres, setPostgres] = useState(false)
-
     const [activeSkill, setActiveSkill] = useState(null)
+    const [resumeView, setResumeView] = useState(false)
 
     // const scrollToTop = () => {
     //     scroll.scrollToTop()
@@ -98,7 +83,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         <div className={'view canopy-view'} key='back'>
                         <div className='card-back card-back-canopy '>
 
-                            <div className='canopy-header'>
+                            <div className='canopy-header margin'>
                                 <h3 className="skills-title opacity">Front End</h3>
                                 <div className='x opacity'><p className='close-button' onClick={clickMeFrontBack}>X</p></div>
                             </div>
@@ -107,15 +92,15 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
                                     {icons.frontend.map(icon => <>
                                     
-                                    {icon.icon === "DiHtml5" ? <div className='icon-hover'><DiHtml5 style={{ fontSize: '6rem', color: '#E54D26'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
-                                icon.icon === "DiCss3" ? <div className='icon-hover'><DiCss3 style={{ fontSize: '6rem', color: '#3D8FC6'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
-                                icon.icon === "DiLess" ? <div className='icon-hover'><DiLess style={{ fontSize: '6rem', color: '#2A4D80'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
-                                icon.icon === "DiSass" ? <div className='icon-hover'><DiSass style={{ fontSize: '6rem', color: '#CC6699'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
-                                icon.icon === "DiBootstrap" ? <div className='icon-hover'><DiBootstrap style={{ fontSize: '6rem', color: '#5B4282'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
-                                icon.icon === "DiJavascript1" ? <div className='icon-hover'><DiJavascript1 style={{ fontSize: '6rem', color: '#F0DB4F'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
-                                icon.icon === "DiReact" ? <div className='icon-hover'><DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
-                                icon.icon === "img src='../static/redux.png' alt='Redux Icon'" ? <img className='icon-hover' src='../static/redux.png' alt='Redux Icon' style={{ width: '75px', maxHeight: '70px', margin: '1%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
-                                icon.icon === "img src='../static/next-text.png' alt='Next Icon'" ? <img className='icon-hover' src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} onClick={()=> setActiveSkill(icon)} />  :
+                                    {icon.icon === "DiHtml5" ? <div className='icon-hover front'><DiHtml5 style={{ fontSize: '6rem', color: '#E54D26'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiCss3" ? <div className='icon-hover front'><DiCss3 style={{ fontSize: '6rem', color: '#3D8FC6'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiLess" ? <div className='icon-hover front'><DiLess style={{ fontSize: '6rem', color: '#2A4D80'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiSass" ? <div className='icon-hover front'><DiSass style={{ fontSize: '6rem', color: '#CC6699'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiBootstrap" ? <div className='icon-hover front'><DiBootstrap style={{ fontSize: '6rem', color: '#5B4282'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiJavascript1" ? <div className='icon-hover front'><DiJavascript1 style={{ fontSize: '6rem', color: '#F0DB4F'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "DiReact" ? <div className='icon-hover front'><DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} onClick={()=> setActiveSkill(icon)} icon={icon} /> </div>:
+                                icon.icon === "img src='../static/redux.png' alt='Redux Icon'" ? <img className='icon-hover front' src='../static/redux.png' alt='Redux Icon' style={{ width: '75px', maxHeight: '70px', margin: '1%' }} onClick={()=> setActiveSkill(icon)} icon={icon} /> :
+                                icon.icon === "img src='../static/next-text.png' alt='Next Icon'" ? <img className='icon-hover front' src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} onClick={()=> setActiveSkill(icon)} />  :
                                 null
                                 }
                                     </>)}
@@ -158,10 +143,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     <div className='backend'>
                         <ReactCardFlip isFlipped={isFlipped2} flipDirection='horizontal' >
                             <img className='roots' src='../static/roots.png' alt='Roots Image' key={backend ? null : 'front'} onClick={clickMeBack} />
-                            <div className={'view roots-view'} key='back'>
-                            <div className='card-back card-back-roots'>
-                            <div className='x'><p className='close-button' onClick={clickMeBackFront}>X</p></div>
-                                <h3 className='skills-title'>Back End</h3>
+                            <div className={'view canopy-view'} key='back'>
+                            <div className='card-back card-back-canopy '>
+                                <div className='canopy-header margin-back'>
+                                    <h3 className='skills-title'>Back End</h3>
+                                    <div className='x'><p className='close-button' onClick={clickMeBackFront}>X</p></div>
+                                </div>
                                     <div className='card-icons'>
 
                                     {icons.backend.map(icon => <>
@@ -183,7 +170,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 </div>
                 <div className='modal'>
                 <ScrollAnimation animateIn='fadeIn' duration={2}>
-                     {frontend || backend ? <h6 className={activeSkill ? "icon-selected" : "select-icon"}>Select an Icon</h6> : <h6 className='select-image'>Select an Image</h6>}
+                     {frontend || backend || devops ? <h6 className={activeSkill ? "icon-selected" : "select-icon"}>Select an Icon</h6> : <h6 className='select-image'>Select an Image</h6>}
                      {activeSkill && <ActiveCard activeSkill={activeSkill} /> }
                 </ScrollAnimation>
                 </div>
@@ -259,7 +246,23 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             {resume &&
             <>
             <ScrollAnimation animateIn='fadeIn' duration={2}>
-            <p className={dark ? null : 'light-text'}>RESUME CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
+                <div className='resume-container'>
+                <a href='../static/resume.pdf' download><FiDownload style={{ fontSize: '2.5rem', color: '#000c1f'}} /></a>
+                    <details style={{ marginTop: '2%'}}>
+                        <summary onClick={()=> setResumeView(!resumeView)}>
+                            {/* {resumeView ? <h5>Click to Hide</h5> : <h5>Click For More Info</h5>} */}
+                            {resumeView ? <div className='resume-imgs'>
+                            <img src='../static/resume-header.png' alt='resume-header'/>
+                            <img src='../static/resumeTop.png' alt='resume-bottom'/>
+                            <img src='../static/resumeBottom.png' alt='resume-top'/>
+                        </div> : <>
+                                    <img className='resume-header' src='../static/resume-header.png' alt='resume-header'/>
+                                </>}
+                        </summary>
+                    </details>
+                </div>
+
+            {/* <p className={dark ? null : 'light-text'}>RESUME CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
             Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
             Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
             Aliquam dicta at molestias dignissimos, illum accusamus, vitae quaerat corrupti perferendis ad obcaecati hic culpa iusto tempora magni sit incidunt minima tempore atque ducimus neque quae. Nisi exercitationem provident blanditiis!
@@ -276,7 +279,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             Minus architecto veritatis ipsum in eos rem velit sequi? Illo corporis distinctio quisquam ipsa velit magnam, et maxime ad tempore soluta pariatur inventore voluptas illum totam rerum voluptatibus quia atque?
             Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
             Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
-            </p>
+            </p> */}
             </ScrollAnimation>
             </>}
 
@@ -441,17 +444,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     max-height: 100%;
                 }
                 .card-back-canopy {
-                    // display: flex;
-                    // flex-direction: column;
-                    // justify-content: center;
-                    // align-items: space-between;
-                    // width: 450px;
-                    // height: 450px;
+                    // background-image: URL('../static/canopyTransparent.png');
                     max-width: 100%;
                     max-height: 100%;
-                    // background-image: URL('../static/canopyTransparent.png');
-                    // color: #fbfbf8;
-                    // color: #e5e7e6;
                     color: black;
                     border-radius: 12px;
                 }
@@ -478,13 +473,13 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     flex-direction: row;
                     flex-wrap: wrap;
                     justify-content: space-between;
-                    // width: 100%;
+                    width: 100%;
                     max-width: 100%;
                     // max-height: 400px;
-                    border: 1px solid blue;
+                    // border: 1px solid blue;
                 }
                 .card-icons-canopy {
-                    margin-top: 5%;
+                    padding: 2%;
                 }
                 .icon-hover {
                     opacity: .5;
@@ -500,26 +495,29 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     margin: -6% 5%;
                 }
                 .dev-header{
+                    color: #000c1f;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
                     // padding: 0 2%;
+                    font-weight: bolder;
                 }
                 .canopy-header {
+                    color: #000c1f;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
                     width: 680px;
-                    border: 1px solid red;
+                    // border: 1px solid red;
                     margin-top: -65px;
                 }
                 .skills-title-dev {
-                    color: red;
+                    color: #000c1f;
                 }
                 .close-button-dev {
-                    color: red;
+                    color: #000c1f;
                     margin: none;
                     padding: none;
                 }
@@ -722,11 +720,50 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     color: #000c1f;
                     animation: fadeIn 2s;
                 }
-                .selector:hover {
-                    border: 2px solid #1f2a44;
-                    border-radius: 12px;
-                    box-sizing: border-box;
-                }                
+                // .selector:hover {
+                //     border: 2px solid #1f2a44;
+                //     border-radius: 12px;
+                //     box-sizing: border-box;
+                // }
+                .front {
+                    // border: 1px solid black;
+                    margin: 0 2%;
+                }
+                .margin {
+                    margin: 2% 0;
+                }
+                .margin-back {
+                    margin-top: -25px;
+                    margin-bottom: 2%;
+                }      
+                .resume-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                } 
+    
+                .resume-imgs {
+                    display: flex;
+                    flex-direction: column;
+                    // margin-left: 2%;
+                    -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                }
+                .resume-header {
+                    -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                }
+                summary {
+                    outline: none;
+                    cursor: pointer;
+                    // font-size: 1.15em;
+                }
+                summary::-webkit-details-marker {
+                    display: none
+                }
       `}</style>
     </>
     )
