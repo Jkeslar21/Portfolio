@@ -251,13 +251,13 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     <details style={{ marginTop: '2%'}}>
                         <summary onClick={()=> setResumeView(!resumeView)}>
                             {/* {resumeView ? <h5>Click to Hide</h5> : <h5>Click For More Info</h5>} */}
-                            {resumeView ? <div className='resume-imgs'>
-                            <img src='../static/resume-header.png' alt='resume-header'/>
-                            <img src='../static/resumeTop.png' alt='resume-bottom'/>
-                            <img src='../static/resumeBottom.png' alt='resume-top'/>
-                        </div> : <>
+                            {resumeView ? <div className='resume-imgs resume-header'>
+                            <img  src='../static/resume-header.png' alt='resume-header'/>
+                            <img  src='../static/resume-top-final.png' alt='resume-bottom'/>
+                            <img  src='../static/resume-bottom-final-6.png' alt='resume-top'/>
+                        </div> : <div>
                                     <img className='resume-header' src='../static/resume-header.png' alt='resume-header'/>
-                                </>}
+                                </div>}
                         </summary>
                     </details>
                 </div>
@@ -292,7 +292,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         <input type="email" name="email" placeholder='E-mail' required />
                         <textarea type="text" name="message" placeholder='Message' className='message' required />
                         <input type="hidden" name="_gotcha" />
-                        <button><>Send <FaPaperPlane style={{ fontSize: '1.5rem'}} /></></button>
+                        <button><div className='button' >Send <FaPaperPlane style={{ fontSize: '1.5rem'}} /></div></button>
                     </form>
                 </div>
             {/* <p className={dark ? null : 'light-text'}>CONTACT CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
@@ -519,7 +519,6 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     align-items: center;
                     justify-content: space-between;
                     width: 680px;
-                    // border: 1px solid red;
                     margin-top: -65px;
                 }
                 .skills-title-dev {
@@ -766,6 +765,8 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                 }
                 summary {
+                    width: 100%:
+                    max-width: 847px;
                     outline: none;
                     cursor: pointer;
                     // font-size: 1.15em;
@@ -819,10 +820,11 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     margin: 1% 0;
                     padding: 10px 15px;
                     border: none;
+                    height: 100px;
                 }
                 button {
                     font-family: 'Raleway', sans-serif;
-                    width: 35%;
+                    width: 25%;
                     font-size: 1.5rem;
                     vertical-align: center;
                     margin-top: 5%;
@@ -835,6 +837,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     cursor: pointer;
                     background-color: #1f2a44;
                     color: #e5e7e6;
+                }
+                .button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    letter-spacing: 3px;
                 }
                 // *:focus{
                 //     outline: none;
