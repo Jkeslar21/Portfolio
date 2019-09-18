@@ -126,10 +126,10 @@ export default function Home() {
                 <ScrollAnimation animateIn='fadeIn' duration={2}>
                     <h1>Joshua Keslar</h1>
                     </ScrollAnimation>
-                    <ScrollAnimation animateIn='fadeIn' duration={2}>
+                    <ScrollAnimation animateIn='fadeIn' duration={3}>
                     <h4>Software Developer</h4>
                     </ScrollAnimation>
-                    <ScrollAnimation animateIn='fadeIn' duration={2}>
+                    <ScrollAnimation animateIn='fadeIn' duration={4}>
                     <Link 
                 activeClass='active'
                 to="skills"

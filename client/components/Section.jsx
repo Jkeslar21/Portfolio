@@ -71,7 +71,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
             {skills &&
             <>
-            <ScrollAnimation animateIn='fadeIn' duration={2}>
+            {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
             <div className='images-modal'>
                 <div className='images'>
                     <div className='frontend'>
@@ -169,10 +169,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     </div>
                 </div>
                 <div className='modal'>
-                <ScrollAnimation animateIn='fadeIn' duration={2}>
+                {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
                      {frontend || backend || devops ? <h6 className={activeSkill ? "icon-selected" : "select-icon"}>Select an Icon</h6> : <h6 className='select-image'>Select an Image</h6>}
                      {activeSkill && <ActiveCard activeSkill={activeSkill} /> }
-                </ScrollAnimation>
+                {/* </ScrollAnimation> */}
                 </div>
             </div>
 
@@ -216,12 +216,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     <p style={{ color: '#141301'}}>reflects real-time changes in values with activity.  Built with DRY, reusable components. </p>
                 </div>
             </div>
-            </ScrollAnimation>
+            {/* </ScrollAnimation> */}
             </>}
 
             {portfolio &&
             <>
-            <ScrollAnimation animateIn='fadeIn' duration={2}>
+            {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
             <p className={dark ? null : 'light-text'}>PORTFOLIO CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
             Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
             Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
@@ -240,12 +240,12 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
             Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
             </p>
-            </ScrollAnimation>
+            {/* </ScrollAnimation> */}
             </>}
 
             {resume &&
             <>
-            <ScrollAnimation animateIn='fadeIn' duration={2}>
+            {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
                 <div className='resume-container'>
                 <a href='../static/resume.pdf' download><FiDownload style={{ fontSize: '2.5rem'}} /></a>
                     <details style={{ marginTop: '2%'}}>
@@ -261,26 +261,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                         </summary>
                     </details>
                 </div>
-
-            {/* <p className={dark ? null : 'light-text'}>RESUME CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
-            Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
-            Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
-            Aliquam dicta at molestias dignissimos, illum accusamus, vitae quaerat corrupti perferendis ad obcaecati hic culpa iusto tempora magni sit incidunt minima tempore atque ducimus neque quae. Nisi exercitationem provident blanditiis!
-            Error autem officia tenetur soluta nulla illum, vero commodi recusandae, fuga nobis nam facere itaque harum officiis! Perferendis ipsam esse laboriosam neque enim quod sit. Consequuntur maiores soluta obcaecati aspernatur?
-            Aspernatur, nihil officia! Expedita dolor nemo itaque ratione accusantium unde vel architecto quod accusamus, tenetur blanditiis esse libero laborum amet, fuga adipisci. Reiciendis laborum nam eaque non earum quis facere.
-            Fugit accusamus aperiam labore quisquam aut. Dolor reiciendis aliquam quod fugit possimus earum neque, iusto ratione expedita? Reiciendis qui sapiente possimus nostrum saepe sit distinctio pariatur autem, commodi ipsa earum.
-            Odit repellat in modi tempora! Quia quisquam repellendus sed quasi sit soluta sint magnam quae modi reiciendis pariatur nisi fuga culpa, sapiente vel tempora similique? Quos officiis possimus dignissimos adipisci.
-            Eveniet explicabo voluptate eligendi doloremque et suscipit, rerum, officiis nesciunt sapiente ipsa magni numquam quam ab recusandae harum incidunt cumque error voluptatem temporibus quae modi, nulla ex? Ratione, modi consequuntur!
-            Itaque expedita vel dolore exercitationem odio officia, eos fugiat obcaecati impedit adipisci sint recusandae consequuntur possimus consectetur sunt nisi repellat voluptates repellendus quisquam esse asperiores minus ea. Facilis, beatae optio.
-            Corporis esse modi laborum dolorum, nisi autem pariatur mollitia. Illo, accusamus sed praesentium atque eos magni. Harum aut repellendus consequatur laborum, praesentium consequuntur voluptates doloremque provident nihil earum tempore est!
-            Iusto porro ullam necessitatibus deleniti officia rerum id distinctio! Non, veritatis ipsa consectetur architecto illo placeat et error vel inventore? Mollitia deserunt minus voluptates praesentium animi. Rerum provident sunt quas!
-            Laborum quibusdam iure totam explicabo culpa temporibus, optio voluptatem nemo at eos voluptas necessitatibus ducimus qui consequatur quam natus dolor ex, nam cumque. Modi optio autem adipisci illo, consectetur provident.
-            Enim suscipit cumque amet blanditiis veritatis sed veniam earum consectetur neque minima quisquam deleniti culpa ut iure ipsa, necessitatibus distinctio recusandae commodi ullam! Laboriosam maxime suscipit hic incidunt tempora harum.
-            Minus architecto veritatis ipsum in eos rem velit sequi? Illo corporis distinctio quisquam ipsa velit magnam, et maxime ad tempore soluta pariatur inventore voluptas illum totam rerum voluptatibus quia atque?
-            Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
-            Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
-            </p> */}
-            </ScrollAnimation>
+            {/* </ScrollAnimation> */}
             </>}
 
             {contact &&
@@ -321,6 +302,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
         <Transition image={image} dark={dark} contact={contact} />
         </div>
         <style jsx>{`
+        // * {
+        //     box-sizing: border-box;
+        // }
                 .light {
                     background-color: #e5e7e6;
                     margin-top: -5px;
@@ -718,7 +702,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     margin-top: 25%;
                     font-size: 2rem;
                     color: #000c1f;
-                    animation: fadeIn 2s;
+                    // animation: fadeIn 2s;
                 }
                 .select-image {
                     text-align: center;
@@ -726,7 +710,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     margin-top: 25%;
                     font-size: 2rem;
                     color: #000c1f;
-                    animation: fadeIn 2s;
+                    // animation: fadeIn 2s;
                 }
                 // .selector:hover {
                 //     border: 2px solid #1f2a44;
