@@ -9,6 +9,8 @@ import { FaChartLine, FaGlobeAmericas, FaPaperPlane } from "react-icons/fa";
 import { MdPhonelink, MdLightbulbOutline } from "react-icons/md";
 import ActiveCard from './icon/ActiveCard'
 import { FiDownload } from "react-icons/fi";
+import MediaCard from './projects/MediaCard'
+import CustomizedDialogs from './projects/CustomizedDialogs'
 // import { Document, Page } from 'react-pdf';
 
 export default function Section({title, id, image, classNameProp, dark, skills, portfolio, resume, contact}) {
@@ -221,62 +223,15 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
 
             {portfolio &&
             <>
+            <div className='portfolio-container'>
+            {/* <MediaCard /> */}
+            <CustomizedDialogs one image={'../static/knexjs.png'} />
+            <CustomizedDialogs two image={'../static/netlify.png'} />
+            <CustomizedDialogs three image={'../static/redux.png'} />
+            <CustomizedDialogs four image={'../static/next-text.png'} />
+            </div>
             {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
-            <p className={dark ? null : 'light-text'}>PORTFOLIO CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
-            Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
-            Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
-            Aliquam dicta at molestias dignissimos, illum accusamus, vitae quaerat corrupti perferendis ad obcaecati hic culpa iusto tempora magni sit incidunt minima tempore atque ducimus neque quae. Nisi exercitationem provident blanditiis!
-            Error autem officia tenetur soluta nulla illum, vero commodi recusandae, fuga nobis nam facere itaque harum officiis! Perferendis ipsam esse laboriosam neque enim quod sit. Consequuntur maiores soluta obcaecati aspernatur?
-            Aspernatur, nihil officia! Expedita dolor nemo itaque ratione accusantium unde vel architecto quod accusamus, tenetur blanditiis esse libero laborum amet, fuga adipisci. Reiciendis laborum nam eaque non earum quis facere.
-            Fugit accusamus aperiam labore quisquam aut. Dolor reiciendis aliquam quod fugit possimus earum neque, iusto ratione expedita? Reiciendis qui sapiente possimus nostrum saepe sit distinctio pariatur autem, commodi ipsa earum.
-            Odit repellat in modi tempora! Quia quisquam repellendus sed quasi sit soluta sint magnam quae modi reiciendis pariatur nisi fuga culpa, sapiente vel tempora similique? Quos officiis possimus dignissimos adipisci.
-            Eveniet explicabo voluptate eligendi doloremque et suscipit, rerum, officiis nesciunt sapiente ipsa magni numquam quam ab recusandae harum incidunt cumque error voluptatem temporibus quae modi, nulla ex? Ratione, modi consequuntur!
-            Itaque expedita vel dolore exercitationem odio officia, eos fugiat obcaecati impedit adipisci sint recusandae consequuntur possimus consectetur sunt nisi repellat voluptates repellendus quisquam esse asperiores minus ea. Facilis, beatae optio.
-            Corporis esse modi laborum dolorum, nisi autem pariatur mollitia. Illo, accusamus sed praesentium atque eos magni. Harum aut repellendus consequatur laborum, praesentium consequuntur voluptates doloremque provident nihil earum tempore est!
-            Iusto porro ullam necessitatibus deleniti officia rerum id distinctio! Non, veritatis ipsa consectetur architecto illo placeat et error vel inventore? Mollitia deserunt minus voluptates praesentium animi. Rerum provident sunt quas!
-            Laborum quibusdam iure totam explicabo culpa temporibus, optio voluptatem nemo at eos voluptas necessitatibus ducimus qui consequatur quam natus dolor ex, nam cumque. Modi optio autem adipisci illo, consectetur provident.
-            Enim suscipit cumque amet blanditiis veritatis sed veniam earum consectetur neque minima quisquam deleniti culpa ut iure ipsa, necessitatibus distinctio recusandae commodi ullam! Laboriosam maxime suscipit hic incidunt tempora harum.
-            Minus architecto veritatis ipsum in eos rem velit sequi? Illo corporis distinctio quisquam ipsa velit magnam, et maxime ad tempore soluta pariatur inventore voluptas illum totam rerum voluptatibus quia atque?
-            Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
-            Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
-            </p>
-            {/* </ScrollAnimation> */}
-            </>}
-
-            {resume &&
-            <>
-            {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
-                <div className='resume-container'>
-                <a href='../static/resume.pdf' download><FiDownload style={{ fontSize: '2.5rem'}} /></a>
-                    <details style={{ marginTop: '2%'}}>
-                        <summary onClick={()=> setResumeView(!resumeView)}>
-                            {/* {resumeView ? <h5>Click to Hide</h5> : <h5>Click For More Info</h5>} */}
-                            {resumeView ? <div className='resume-imgs resume-header'>
-                            <img  src='../static/resume-header.png' alt='resume-header'/>
-                            <img  src='../static/resume-top-final.png' alt='resume-bottom'/>
-                            <img  src='../static/resume-bottom-final-6.png' alt='resume-top'/>
-                        </div> : <div>
-                                    <img className='resume-header' src='../static/resume-header.png' alt='resume-header'/>
-                                </div>}
-                        </summary>
-                    </details>
-                </div>
-            {/* </ScrollAnimation> */}
-            </>}
-
-            {contact &&
-            <>
-            <ScrollAnimation animateIn='fadeIn' duration={2}>
-                <div className='form'>
-                    <form className='form-container' action="https://formcarry.com/s/bN9Y1F-wrzW" method="POST" accept-charset="UTF-8" >
-                        <input type="text" name="name" placeholder='Name' required />
-                        <input type="email" name="email" placeholder='E-mail' required />
-                        <textarea type="text" name="message" placeholder='Message' className='message' required />
-                        <input type="hidden" name="_gotcha" />
-                        <button><div className='button' >Send <FaPaperPlane style={{ fontSize: '1.5rem'}} /></div></button>
-                    </form>
-                </div>
-            {/* <p className={dark ? null : 'light-text'}>CONTACT CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
+            {/* <p className={dark ? null : 'light-text'}>PORTFOLIO CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
             Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
             Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
             Aliquam dicta at molestias dignissimos, illum accusamus, vitae quaerat corrupti perferendis ad obcaecati hic culpa iusto tempora magni sit incidunt minima tempore atque ducimus neque quae. Nisi exercitationem provident blanditiis!
@@ -294,7 +249,43 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
             Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
             </p> */}
-            </ScrollAnimation>
+            {/* </ScrollAnimation> */}
+            </>}
+
+            {resume &&
+            <>
+            {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
+                <div className='resume-container'>
+                <a href='../static/resume.pdf' download><FiDownload style={{ fontSize: '2.5rem'}} /></a>
+                    <details style={{ marginTop: '2%'}}>
+                        <summary onClick={()=> setResumeView(!resumeView)}>
+                            {/* {resumeView ? <h5>Click to Hide</h5> : <h5>Click For More Info</h5>} */}
+                            {resumeView ? <div className='resume-imgs resume-header'>
+                            <img  src='../static/topFinalResume.png' alt='resume-header'/>
+                            <img  src='../static/middleFinalResume.png' alt='resume-bottom'/>
+                            <img  src='../static/bottomFinalResume.png' alt='resume-top'/>
+                        </div> : <div>
+                                    <img className='resume-header' src='../static/topFinalResume.png' alt='resume-header'/>
+                                </div>}
+                        </summary>
+                    </details>
+                </div>
+            {/* </ScrollAnimation> */}
+            </>}
+
+            {contact &&
+            <>
+            {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
+                <div className='form'>
+                    <form className='form-container' action="https://formcarry.com/s/bN9Y1F-wrzW" method="POST" accept-charset="UTF-8" >
+                        <input type="text" name="name" placeholder='Name' required />
+                        <input type="email" name="email" placeholder='E-mail' required />
+                        <textarea type="text" name="message" placeholder='Message' className='message' required />
+                        <input type="hidden" name="_gotcha" />
+                        <button><div className='button' >Send <FaPaperPlane style={{ fontSize: '1.5rem'}} /></div></button>
+                    </form>
+                </div>
+            {/* </ScrollAnimation> */}
             <h5 onClick={scrollToTop} className={'arrow-up-icon-dark'}><TiArrowUpThick /></h5>
             </>}
 
@@ -838,6 +829,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 // .message {
                 //     height: 200px;
                 // }
+                .portfolio-container {
+                    display: flex;
+                    justify-content: center;
+                }
       `}</style>
     </>
     )
