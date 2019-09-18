@@ -5,7 +5,7 @@ import { TiArrowUpThick } from "react-icons/ti";
 import ScrollAnimation from 'react-animate-on-scroll';
 import ReactCardFlip from 'react-card-flip';
 import { DiReact, DiJavascript1, DiBootstrap, DiSass, DiLess, DiCss3, DiHtml5, DiGithubBadge, DiGit, DiNodejsSmall, DiMysql, DiPostgresql } from "react-icons/di";
-import { FaChartLine, FaGlobeAmericas } from "react-icons/fa";
+import { FaChartLine, FaGlobeAmericas, FaPaperPlane } from "react-icons/fa";
 import { MdPhonelink, MdLightbulbOutline } from "react-icons/md";
 import ActiveCard from './icon/ActiveCard'
 import { FiDownload } from "react-icons/fi";
@@ -247,7 +247,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             <>
             <ScrollAnimation animateIn='fadeIn' duration={2}>
                 <div className='resume-container'>
-                <a href='../static/resume.pdf' download><FiDownload style={{ fontSize: '2.5rem', color: '#000c1f'}} /></a>
+                <a href='../static/resume.pdf' download><FiDownload style={{ fontSize: '2.5rem'}} /></a>
                     <details style={{ marginTop: '2%'}}>
                         <summary onClick={()=> setResumeView(!resumeView)}>
                             {/* {resumeView ? <h5>Click to Hide</h5> : <h5>Click For More Info</h5>} */}
@@ -286,7 +286,16 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             {contact &&
             <>
             <ScrollAnimation animateIn='fadeIn' duration={2}>
-            <p className={dark ? null : 'light-text'}>CONTACT CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
+                <div className='form'>
+                    <form className='form-container' action="https://formcarry.com/s/bN9Y1F-wrzW" method="POST" accept-charset="UTF-8" >
+                        <input type="text" name="name" placeholder='Name' required />
+                        <input type="email" name="email" placeholder='E-mail' required />
+                        <textarea type="text" name="message" placeholder='Message' className='message' required />
+                        <input type="hidden" name="_gotcha" />
+                        <button><>Send <FaPaperPlane style={{ fontSize: '1.5rem'}} /></></button>
+                    </form>
+                </div>
+            {/* <p className={dark ? null : 'light-text'}>CONTACT CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
             Commodi magni voluptas nemo earum perferendis voluptatum odio dignissimos molestiae esse aut. Nam quae beatae magnam ea, voluptatibus minus enim vitae culpa, cum expedita fuga nesciunt nulla, ut similique corrupti?
             Cumque quis illo eius doloremque accusamus aliquid architecto! Pariatur provident cumque minima corporis maiores. Asperiores, debitis eveniet. Quaerat, porro tenetur quam ratione suscipit non voluptates cupiditate totam quis corrupti officiis!
             Aliquam dicta at molestias dignissimos, illum accusamus, vitae quaerat corrupti perferendis ad obcaecati hic culpa iusto tempora magni sit incidunt minima tempore atque ducimus neque quae. Nisi exercitationem provident blanditiis!
@@ -303,7 +312,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             Minus architecto veritatis ipsum in eos rem velit sequi? Illo corporis distinctio quisquam ipsa velit magnam, et maxime ad tempore soluta pariatur inventore voluptas illum totam rerum voluptatibus quia atque?
             Qui cupiditate ea molestias id quisquam nulla a! Ullam nulla molestiae accusantium animi optio in dolorum obcaecati, perferendis beatae dolores est culpa doloremque unde iusto nemo saepe neque repudiandae iste.
             Eveniet dolorum incidunt obcaecati ipsa vero error officiis doloremque distinctio, voluptas atque totam officia labore veritatis mollitia nostrum ut temporibus voluptates placeat soluta, unde hic corrupti natus pariatur quas. Amet!
-            </p>
+            </p> */}
             </ScrollAnimation>
             <h5 onClick={scrollToTop} className={'arrow-up-icon-dark'}><TiArrowUpThick /></h5>
             </>}
@@ -764,6 +773,79 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 summary::-webkit-details-marker {
                     display: none
                 }
+                a {
+                    color: #b7b5b3;
+                    // color: #000c1f;
+                }
+                a:hover {
+                    border-bottom: 2px solid #4ad5ff;
+                    cursor: pointer;
+                    color: #000c1f;
+                }
+                .form {
+                    display: flex;
+                    max-width: 30%;
+                    // border: 2px solid red;
+                    margin: 0 auto;
+                    margin-top: 3%;
+                }
+                .form-container {
+                    display: flex;
+                    flex-direction: column;
+                    // border: 2px solid white;
+                    width: 100%;
+                    align-items: center;
+                   
+                }
+                input {
+                    font-family: 'Raleway', sans-serif;
+                    width: 100%;
+                    background-color: #1f2a44;
+                    outline: none;
+                    font-weight: bold;
+                    color: #e5e7e6;
+                    margin: 1% 0;
+                    padding: 10px 15px;
+                    border: none;
+                }
+
+                textarea {
+                    font-family: 'Raleway', sans-serif;
+                    width: 100%;
+                    background-color: #1f2a44;
+                    outline: none;
+                    font-weight: bold;
+                    color: #e5e7e6;
+                    margin: 1% 0;
+                    padding: 10px 15px;
+                    border: none;
+                }
+                button {
+                    font-family: 'Raleway', sans-serif;
+                    width: 35%;
+                    font-size: 1.5rem;
+                    vertical-align: center;
+                    margin-top: 5%;
+                    font-weight: bold;
+                    border-radius: 12px;
+                    color: #000c1f;
+                    transition: 0.5s;
+                }
+                button:hover {
+                    cursor: pointer;
+                    background-color: #1f2a44;
+                    color: #e5e7e6;
+                }
+                // *:focus{
+                //     outline: none;
+                //     border-color: inherit;
+                // -webkit-box-shadow: none;
+                // box-shadow: none;
+                // }
+                
+                // .message {
+                //     height: 200px;
+                // }
       `}</style>
     </>
     )
@@ -860,7 +942,7 @@ const icons = {
         {
             "icon": "DiGithubBadge",
             "name": "GitHub",
-            "subtitle": "Software Developer",
+            "subtitle": "Software Developer Platform",
             "description": "GitHub is an American company that provides hosting for software development version control using Git. It is a subsidiary of Microsoft, which acquired the company in 2018 for $7.5 billion.",
             "date_learned": "January 2019"
         },
