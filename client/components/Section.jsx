@@ -225,10 +225,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             <>
             <div className='portfolio-container'>
             {/* <MediaCard /> */}
-            <CustomizedDialogs one image={'../static/knexjs.png'} />
-            <CustomizedDialogs two image={'../static/netlify.png'} />
-            <CustomizedDialogs three image={'../static/redux.png'} />
-            <CustomizedDialogs four image={'../static/next-text.png'} />
+            <CustomizedDialogs one image={'../static/wellDoneProjectImage.png'} title='WellDone International' icons={wellDoneInternational} />
+            <CustomizedDialogs two image={'../static/netlify.png'} title='title 2 here' icons='project icons here' />
+            <CustomizedDialogs three image={'../static/redux.png'} title='title 3 here' icons='project icons here' />
+            <CustomizedDialogs four image={'../static/next-text.png'} title='title 4 here' icons='project icons here' />
             </div>
             {/* <ScrollAnimation animateIn='fadeIn' duration={2}> */}
             {/* <p className={dark ? null : 'light-text'}>PORTFOLIO CONTENT TEST - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quibusdam quidem modi, commodi aliquam fuga quaerat, ipsum optio molestias dolores, aut accusantium consequatur expedita. Veritatis, recusandae dolore. Accusamus, error delectus!
@@ -1006,5 +1006,15 @@ const icons = {
             "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and technical standards compliance. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users.",
             "date_learned": "March 2019"
         }
+    ]
+}
+
+const wellDoneInternational = {
+    components: [   
+                    <DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} />,
+                    <img className='icon-hover front' src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} />,
+                    <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} />,
+                    <img className='icon-hover' src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} />,
+                    <img className='icon-hover' src='../static/netlify.png' alt='Netlify Icon' style={{ width: '75px', height: '75px', marginTop: '2.25%', paddingLeft: '2%' }} />
     ]
 }

@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { DiReact, DiNodejsSmall } from "react-icons/di";
 
 const useStyles = makeStyles({
   card: {
@@ -19,10 +20,11 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard({ handleClickOpen, image }) {
+export default function MediaCard({ handleClickOpen, image, title, one, two, three, four }) {
   const classes = useStyles();
 
   return (
+      <>
     <Card className={classes.card}>
       <CardActionArea onClick={handleClickOpen}>
         <CardMedia
@@ -32,11 +34,23 @@ export default function MediaCard({ handleClickOpen, image }) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {one && <div className='icon-container'>
+                    <div className='row'>
+                        <DiReact style={{ fontSize: '3rem', color: '#61DAFB'}} />
+                        <img className='icon-hover front' src='../static/next-text.png' alt='Next Icon' style={{ width: '50px', maxHeight: '50px', marginRight: '5%' }} />
+                        <DiNodejsSmall style={{ fontSize: '3rem', color: '#83CD29'}} />
+                    </div>
+                    <div className='row'>
+                        <img className='icon-hover' src='../static/expressFinal.png' alt='Express Icon' style={{ width: '40px', height: '40px', marginTop: '2%', paddingLeft: '2%' }} />
+                        <img className='icon-hover' src='../static/netlify.png' alt='Netlify Icon' style={{ width: '40px', height: '40px', marginTop: '2.25%', paddingLeft: '2%' }} />
+                    </div>
+            </div>}
+            {/* {two &&}
+            {three &&}
+            {four &&} */}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -45,9 +59,28 @@ export default function MediaCard({ handleClickOpen, image }) {
           View
         </Button>
         <Button size="small" color="primary">
-          GitHub
+          {one && <a target="_blank" href="https://github.com/labs15-well-done/frontend">GitHub</a>}
+          {two && 'GitHub'}
+          {three && 'GitHub'}
+          {four && 'GitHub'}
         </Button>
       </CardActions>
     </Card>
+    <style jsx>{`
+                .icon-container {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .row {
+                    display: flex;
+                    justify-content: space-around;
+                }
+                a {
+                    text-decoration: none;
+                    color: black;
+
+                }
+      `}</style>
+  </>
   );
 }

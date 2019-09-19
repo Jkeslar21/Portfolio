@@ -50,7 +50,7 @@ const DialogActions = withStyles(theme => ({
   },
 }))(MuiDialogActions);
 
-export default function CustomizedDialogs({image, one, two, three, four}) {
+export default function CustomizedDialogs({image, title, icons, description, one, two, three, four}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -66,10 +66,10 @@ export default function CustomizedDialogs({image, one, two, three, four}) {
         Open dialog
       </Button> */}
       <div style={{ maxWidth: '345px'}}>
-      {one && <MediaCard handleClickOpen={handleClickOpen} image={image} />}
-      {two && <MediaCard handleClickOpen={handleClickOpen} image={image} />}
-      {three && <MediaCard handleClickOpen={handleClickOpen} image={image} />}
-      {four && <MediaCard handleClickOpen={handleClickOpen} image={image} />}
+      {one && <MediaCard handleClickOpen={handleClickOpen} image={image} one={one} title={title} icons={icons} />}
+      {two && <MediaCard handleClickOpen={handleClickOpen} image={image} two={two} title={title} icons={icons} />}
+      {three && <MediaCard handleClickOpen={handleClickOpen} image={image} three={three} title={title} icons={icons} />}
+      {four && <MediaCard handleClickOpen={handleClickOpen} image={image} four={four} title={title} icons={icons} />}
       </div>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
