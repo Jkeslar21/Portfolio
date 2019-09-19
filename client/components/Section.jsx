@@ -798,6 +798,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     height: 100px;
                 }
                 button {
+                    display: flex;
                     font-family: 'Raleway', sans-serif;
                     width: 25%;
                     font-size: 1.5rem;
@@ -807,6 +808,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     border-radius: 12px;
                     color: #000c1f;
                     transition: 0.5s;
+                    justify-content: space-around;
                 }
                 button:hover {
                     cursor: pointer;
