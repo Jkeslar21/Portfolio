@@ -12,11 +12,19 @@ import { DiReact, DiNodejsSmall } from "react-icons/di";
 const useStyles = makeStyles({
   card: {
     maxWidth: 345,
+    width: 275,
     backgroundColor: '#e5e7e6',
-    color: '#000c1f'
+    color: '#000c1f',
+    borderRadius: '12px',
+    webkitBoxShadow: '10px 10px 21px -2px rgba(255,255,255,0.75)',
+    mozBoxShadow: '10px 10px 21px -2px rgba(255,255,255,0.75)',
+    boxShadow: '10px 10px 21px -2px rgba(229,231,230,.75)',
+    // border: '2px solid #000c1f' 
+    // border: '2px solid #1f2a44'
   },
   media: {
     height: 140,
+    // borderBottom: '2px solid #000c1f'
   },
 });
 
@@ -30,7 +38,13 @@ export default function MediaCard({ handleClickOpen, image, title, one, two, thr
         <CardMedia
           className={classes.media}
           image={image}
-          title="Contemplative Reptile"
+          title={
+              one ? "WellDone International" :
+              two ? "Project 2" :
+              three ? "Project 3" :
+              four ? "Project 4" :
+              null
+            }
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -56,7 +70,10 @@ export default function MediaCard({ handleClickOpen, image, title, one, two, thr
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          View
+        {one && <a target="_blank" href="https://dev-welldone.netlify.com">View</a>}
+          {two && 'View'}
+          {three && 'View'}
+          {four && 'View'}
         </Button>
         <Button size="small" color="primary">
           {one && <a target="_blank" href="https://github.com/labs15-well-done/frontend">GitHub</a>}

@@ -225,7 +225,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
             <>
             <div className='portfolio-container'>
             {/* <MediaCard /> */}
-            <CustomizedDialogs one image={'../static/wellDoneProjectImage.png'} title='WellDone International' icons={wellDoneInternational} />
+            <CustomizedDialogs one image={'../static/wellDoneProjectImage.png'} title='WellDone International' />
             <CustomizedDialogs two image={'../static/netlify.png'} title='title 2 here' icons='project icons here' />
             <CustomizedDialogs three image={'../static/redux.png'} title='title 3 here' icons='project icons here' />
             <CustomizedDialogs four image={'../static/next-text.png'} title='title 4 here' icons='project icons here' />
@@ -665,9 +665,9 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     // background: #fbfbf8;
                     border-radius: 12px;
                     padding: 2%;
-                    // -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
-                    // -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
-                    // box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
+                    // -webkit-box-shadow: 10px 10px 21px -2px rgba(255,255,255,0.75);
+                    // -moz-box-shadow: 10px 10px 21px -2px rgba(255,255,255,0.75);
+                    // box-shadow: 10px 10px 21px -2px rgba(255,255,255,0.75);
                 }
                 .images-modal {
                     display: flex;
@@ -833,7 +833,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 // }
                 .portfolio-container {
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-evenly;
                 }
       `}</style>
     </>
