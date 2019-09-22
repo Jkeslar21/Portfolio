@@ -74,6 +74,16 @@ export default function Navigation() {
                 .active {
                     border-bottom: 1px solid #4ad5ff !important;
                 }
+                @media (max-width: 600px) {
+                    .nav-items {
+                        display: flex;
+                        flex-wrap: wrap
+                        justify-content: space-evenly;
+                    }
+                    .nav-item {
+                        margin-right: 25px;
+                    }
+                }
       `}</style>
         </>
     )

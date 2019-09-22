@@ -735,6 +735,7 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                     box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                 }
                 .resume-header {
+                    max-width: 100%;
                     -webkit-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     -moz-box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
                     box-shadow: 10px 10px 21px -2px rgba(20,19,1,0.75);
@@ -751,10 +752,10 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 }
                 a {
                     color: #b7b5b3;
+                    transition: 0.4s;
                     // color: #000c1f;
                 }
                 a:hover {
-                    border-bottom: 2px solid #4ad5ff;
                     cursor: pointer;
                     color: #000c1f;
                 }
@@ -834,7 +835,13 @@ export default function Section({title, id, image, classNameProp, dark, skills, 
                 .portfolio-container {
                     display: flex;
                     justify-content: space-evenly;
+                    flex-wrap: wrap;
                 }
+                // @media (max-width: 800px) {
+                //     .arrow-up-icon, .arrow-up-icon-dark: {
+                //         margin-top: -21px;
+                //     }
+                // }
       `}</style>
     </>
     )

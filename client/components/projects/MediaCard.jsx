@@ -19,8 +19,7 @@ const useStyles = makeStyles({
     webkitBoxShadow: '10px 10px 21px -2px rgba(255,255,255,0.75)',
     mozBoxShadow: '10px 10px 21px -2px rgba(255,255,255,0.75)',
     boxShadow: '10px 10px 21px -2px rgba(229,231,230,.75)',
-    // border: '2px solid #000c1f' 
-    // border: '2px solid #1f2a44'
+    fontFamily: 'Raleway, sans-serif'
   },
   media: {
     height: 140,
@@ -87,6 +86,7 @@ export default function MediaCard({ handleClickOpen, image, title, one, two, thr
                 .icon-container {
                     display: flex;
                     flex-direction: column;
+                    
                 }
                 .row {
                     display: flex;

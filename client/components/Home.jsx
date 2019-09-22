@@ -140,6 +140,12 @@ export default function Home() {
              ><h5 className={'arrow-down'} ><TiArrowDownThick /></h5></Link>
                     </ScrollAnimation>
                 </div>
+
+                {/* <div className='particle-middle'>
+                <Particles params={particleOpt} />
+                </div> */}
+
+
                 <div className='particle-bottom'>
                   <Particles params={particleOpt} />
                   <div className='clear'>
@@ -217,6 +223,24 @@ export default function Home() {
           z-index: 50;
           margin-top: -50%;
         }
+        .particle-middle {
+          z-index: -5;
+          margin-top: -500px;
+          background-color: #000c1f;
+        }
+        // @media (max-width: 730px) {
+        //   h1 {
+        //     font-size: 5rem;
+        //   }
+        // }
+        // @media (max-width: 550px) {
+        //   h1 {
+        //     font-size: 3.5rem;
+        //   }
+        //   h4 {
+        //     font-size: 2rem;
+        //   }
+        // }
       `}</style>
         </>
     )
