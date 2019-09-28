@@ -61,7 +61,7 @@ const DialogActions = withStyles(theme => ({
 
 export default function CustomizedDialogs({image, title, icons, description, one, two, three, four}) {
     // const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const [picture, setPicture] = useState(0)
   
 

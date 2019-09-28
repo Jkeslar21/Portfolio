@@ -1,48 +1,56 @@
-import React from 'react'
-import { Link } from 'react-scroll'
-
+import React from "react";
+import { Link } from "react-scroll";
 
 export default function Navigation() {
-    return (
-        <>
-        <div className='nav-items'>
-            <Link 
-                activeClass='active'
-                to="skills"
-                spy={true}
-                smooth={true}
-                duration={1000}
-                offset={-125}
-             ><span className='nav-item'>Skills</span></Link>
-             <Link 
-                activeClass='active'
-                to="portfolio"
-                spy={true}
-                smooth={true}
-                duration={1000}
-                offset={-125}
-             ><span className='nav-item'>Portfolio</span></Link>
-             <Link 
-                activeClass='active'
-                to="resume"
-                spy={true}
-                smooth={true}
-                duration={1000}
-                offset={-125}
-             ><span className='nav-item'>Resume</span></Link>
-             <Link 
-                activeClass='active'
-                to="contact"
-                spy={true}
-                smooth={true}
-                duration={1000}
-                offset={-125}
-             ><span className='nav-item'>Contact</span></Link>
-        </div>
-        <style jsx>{`
+  return (
+    <>
+      <div className="nav-items">
+        <Link
+          activeClass="active"
+          to="skills"
+          spy={true}
+          smooth={true}
+          duration={1000}
+          offset={-125}
+        >
+          <span className="nav-item">Skills</span>
+        </Link>
+        <Link
+          activeClass="active"
+          to="portfolio"
+          spy={true}
+          smooth={true}
+          duration={1000}
+          offset={-125}
+        >
+          <span className="nav-item">Portfolio</span>
+        </Link>
+        <Link
+          activeClass="active"
+          to="resume"
+          spy={true}
+          smooth={true}
+          duration={1000}
+          offset={-125}
+        >
+          <span className="nav-item">Resume</span>
+        </Link>
+        <Link
+          activeClass="active"
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={1000}
+          offset={-125}
+        >
+          <span className="nav-item">Contact</span>
+        </Link>
+      </div>
+      <style jsx>{`
                 .nav-items {
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-evenly;
+                    // justify-content: center;
                     position: fixed;
                     top: 0;
                     left: 0;
@@ -61,7 +69,7 @@ export default function Navigation() {
                     user-select: none;   
                 }
                 .nav-item {
-                    margin-right: 50px;
+                    // margin-right: 50px;
                     letter-spacing: 2px;
                     font-family: 'Raleway', sans-serif;
                 }
@@ -74,17 +82,17 @@ export default function Navigation() {
                 .active {
                     border-bottom: 1px solid #4ad5ff !important;
                 }
-                @media (max-width: 600px) {
-                    .nav-items {
-                        display: flex;
-                        flex-wrap: wrap
-                        justify-content: space-evenly;
-                    }
-                    .nav-item {
-                        margin-right: 25px;
-                    }
-                }
+                // @media (max-width: 600px) {
+                //     .nav-items {
+                //         display: flex;
+                //         // flex-wrap: wrap
+                //         justify-content: space-evenly;
+                //     }
+                //     .nav-item {
+                //         margin-right: 25px;
+                //     }
+                // }
       `}</style>
-        </>
-    )
+    </>
+  );
 }

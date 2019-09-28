@@ -1016,12 +1016,12 @@ const icons = {
     ]
 }
 
-const wellDoneInternational = {
-    components: [   
-                    <DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} />,
-                    <img className='icon-hover front' src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} />,
-                    <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} />,
-                    <img className='icon-hover' src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} />,
-                    <img className='icon-hover' src='../static/netlify.png' alt='Netlify Icon' style={{ width: '75px', height: '75px', marginTop: '2.25%', paddingLeft: '2%' }} />
-    ]
-}
+// const wellDoneInternational = {
+//     components: [   
+//                     <DiReact style={{ fontSize: '6rem', color: '#61DAFB'}} />,
+//                     <img className='icon-hover front' src='../static/next-text.png' alt='Next Icon' style={{ width: '75px', maxHeight: '75px', marginRight: '5%' }} />,
+//                     <DiNodejsSmall style={{ fontSize: '6rem', color: '#83CD29'}} />,
+//                     <img className='icon-hover' src='../static/expressFinal.png' alt='Express Icon' style={{ width: '75px', height: '75px', marginTop: '2%', paddingLeft: '2%' }} />,
+//                     <img className='icon-hover' src='../static/netlify.png' alt='Netlify Icon' style={{ width: '75px', height: '75px', marginTop: '2.25%', paddingLeft: '2%' }} />
+//     ]
+// }
