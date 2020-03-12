@@ -145,9 +145,9 @@ export default function Home() {
         </ScrollAnimation>
       </div>
 
-      {/* <div className='particle-middle'>
+      <div className='particle-middle'>
                 <Particles params={particleOpt} />
-                </div> */}
+                </div>
 
       <div className="particle-bottom">
         <Particles params={particleOpt} />
